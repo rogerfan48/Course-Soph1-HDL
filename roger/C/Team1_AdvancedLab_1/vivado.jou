@@ -1,0 +1,72 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Mon Sep 16 17:03:38 2024
+# Process ID: 16676
+# Current directory: C:/Users/johnn/Team1_AdvancedLab_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22504 C:\Users\johnn\Team1_AdvancedLab_1\Team1_AdvancedLab_1.xpr
+# Log file: C:/Users/johnn/Team1_AdvancedLab_1/vivado.log
+# Journal file: C:/Users/johnn/Team1_AdvancedLab_1\vivado.jou
+# Running On: ª≈’Ÿ®ﬂ•–, OS: Windows, CPU Frequency: 2112 MHz, CPU Physical cores: 12, Host memory: 16882 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/johnn/Team1_AdvancedLab_1/Team1_AdvancedLab_1.xpr
+update_compile_order -fileset sources_1
+set_property source_mgmt_mode DisplayOnly [current_project]
+launch_simulation
+source Toggle_Flip_Flop_t.tcl
+move_files -fileset sim_1 [get_files  C:/Users/johnn/Team1_AdvancedLab_1/Toggle_Flip_Flop_t.v]
+export_ip_user_files -of_objects  [get_files C:/Users/johnn/Team1_AdvancedLab_1/Toggle_Flip_Flop_t.v] -no_script -reset -force -quiet
+remove_files  C:/Users/johnn/Team1_AdvancedLab_1/Toggle_Flip_Flop_t.v
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse C:/Users/johnn/Team1_AdvancedLab_1/Toggle_Flip_Flop_t.v
+close_sim
+launch_simulation
+source Toggle_Flip_Flop_t.tcl
+close_sim
+launch_simulation
+launch_simulation
+source Toggle_Flip_Flop_t.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Crossbar_4x4_4bit_t [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+close_sim
+launch_simulation
+source Crossbar_4x4_4bit_t.tcl
+export_ip_user_files -of_objects  [get_files C:/Users/johnn/Team1_AdvancedLab_1/Lab1_Team1_Crossbar_4x4_4bit.v] -no_script -reset -force -quiet
+remove_files  C:/Users/johnn/Team1_AdvancedLab_1/Lab1_Team1_Crossbar_4x4_4bit.v
+add_files -norecurse C:/Users/johnn/Team1_AdvancedLab_1/Lab1_Team1_Crossbar_4x4_4bit.v
+close_sim
+launch_simulation
+source Crossbar_4x4_4bit_t.tcl
+close_sim
+launch_simulation
+source Crossbar_4x4_4bit_t.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Crossbar_2x2_4bit_t [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+launch_simulation
+close_sim
+launch_simulation
+source Crossbar_2x2_4bit_t.tcl
+close_sim
+launch_simulation
+source Crossbar_2x2_4bit_t.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Crossbar_4x4_4bit_t [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+launch_simulation
+close_sim
+launch_simulation
+source Crossbar_4x4_4bit_t.tcl
+close_sim

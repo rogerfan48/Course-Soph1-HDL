@@ -1,0 +1,12 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/sweri/Desktop/SynologyDrive/Code/NTHU/HD/Lab1/a1_Dmux_1x4_4bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Dmux_1x2_4bit
+INFO: [VRFC 10-311] analyzing module Dmux_1x4_4bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/sweri/Desktop/SynologyDrive/Code/NTHU/HD/Lab1/a2_Crossbar_2x2_4bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Crossbar_2x2_4bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/sweri/Desktop/SynologyDrive/Code/NTHU/HD/Lab1/b1_Mux_4x1_4bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux_2x1_4bit
+INFO: [VRFC 10-311] analyzing module Mux_4x1_4bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/sweri/Desktop/SynologyDrive/Code/NTHU/HD/Lab1/a2_Crossbar_2x2_4bit_t.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Crossbar_2x2_4bit_t
+ERROR: [VRFC 10-2989] 'sel' is not declared [C:/Users/sweri/Desktop/SynologyDrive/Code/NTHU/HD/Lab1/a2_Crossbar_2x2_4bit_t.v:14]
+ERROR: [VRFC 10-8530] module 'Crossbar_2x2_4bit_t' is ignored due to previous errors [C:/Users/sweri/Desktop/SynologyDrive/Code/NTHU/HD/Lab1/a2_Crossbar_2x2_4bit_t.v:3]

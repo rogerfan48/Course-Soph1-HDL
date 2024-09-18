@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Sep 12 15:55:40 2024
+# Process ID: 400
+# Current directory: C:/Users/User/Desktop/Lab1/basic1/basic1.runs/synth_1
+# Command line: vivado.exe -log Mux_4x1_4bit_t.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Mux_4x1_4bit_t.tcl
+# Log file: C:/Users/User/Desktop/Lab1/basic1/basic1.runs/synth_1/Mux_4x1_4bit_t.vds
+# Journal file: C:/Users/User/Desktop/Lab1/basic1/basic1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Mux_4x1_4bit_t.tcl -notrace

@@ -1,0 +1,15 @@
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+C:/Users/johnn/Team1_AdvancedLab_1/Crossbar_2x2_4bit_t.v,1726475594,verilog,,C:/Users/johnn/Team1_AdvancedLab_1/Dmux_1x4_4bit_t.v,C:/Users/johnn/Team1_AdvancedLab_1/Lab1_Team1_Crossbar_2x2_4bit.v,Crossbar_2x2_4bit_t,,,,,,,,
+C:/Users/johnn/Team1_AdvancedLab_1/Crossbar_4x4_4bit_t.v,1726474606,verilog,,C:/Users/johnn/Team1_AdvancedLab_1/Crossbar_2x2_4bit_t.v,C:/Users/johnn/Team1_AdvancedLab_1/Lab1_Team1_Crossbar_4x4_4bit.v,Crossbar_4x4_4bit_t,,,,,,,,
+C:/Users/johnn/Team1_AdvancedLab_1/Dmux_1x4_4bit_t.v,1726474555,verilog,,,C:/Users/johnn/Team1_AdvancedLab_1/Lab1_Team1_Dmux_1x4_4bit.v,Dmux_1x4_4bit_t,,,,,,,,
+C:/Users/johnn/Team1_AdvancedLab_1/Lab1_D_Flip_Flop.v,1726320278,verilog,,C:/Users/johnn/Team1_AdvancedLab_1/Lab1_Team1_Crossbar_4x4_4bit.v,,D_Flip_Flop;D_Latch,,,,,,,,
+C:/Users/johnn/Team1_AdvancedLab_1/Lab1_Mux_4x1_4bit.v,1726299351,verilog,,C:/Users/johnn/Team1_AdvancedLab_1/Lab1_Team1_Dmux_1x4_4bit.v,,Mux_2x1_4bit;Mux_4x1_4bit,,,,,,,,
+C:/Users/johnn/Team1_AdvancedLab_1/Lab1_Team1_Crossbar_2x2_4bit.v,1726477893,verilog,,C:/Users/johnn/Team1_AdvancedLab_1/Lab1_D_Flip_Flop.v,C:/Users/johnn/Team1_AdvancedLab_1/Lab1_Team1_Dmux_1x4_4bit.v;C:/Users/johnn/Team1_AdvancedLab_1/Lab1_Mux_4x1_4bit.v,Crossbar_2x2_4bit,,,,,,,,
+C:/Users/johnn/Team1_AdvancedLab_1/Lab1_Team1_Crossbar_4x4_4bit.v,1726477089,verilog,,C:/Users/johnn/Team1_AdvancedLab_1/Toggle_Flip_Flop_t.v,C:/Users/johnn/Team1_AdvancedLab_1/Lab1_Team1_Crossbar_2x2_4bit.v,Crossbar_4x4_4bit,,,,,,,,
+C:/Users/johnn/Team1_AdvancedLab_1/Lab1_Team1_Dmux_1x4_4bit.v,1726478111,verilog,,C:/Users/johnn/Team1_AdvancedLab_1/Lab1_Team1_Crossbar_2x2_4bit.v,,Dmux_1x2_4bit;Dmux_1x4_4bit,,,,,,,,
+C:/Users/johnn/Team1_AdvancedLab_1/Lab1_Team1_Toggle_Flip_Flop.v,1726477699,verilog,,,C:/Users/johnn/Team1_AdvancedLab_1/Lab1_D_Flip_Flop.v,Toggle_Flip_Flop;XOR_Gate,,,,,,,,
+C:/Users/johnn/Team1_AdvancedLab_1/Team1_AdvancedLab_1.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,
+C:/Users/johnn/Team1_AdvancedLab_1/Toggle_Flip_Flop_t.v,1726474580,verilog,,C:/Users/johnn/Team1_AdvancedLab_1/Crossbar_4x4_4bit_t.v,C:/Users/johnn/Team1_AdvancedLab_1/Lab1_Team1_Toggle_Flip_Flop.v,Toggle_Flip_Flop_t,,,,,,,,

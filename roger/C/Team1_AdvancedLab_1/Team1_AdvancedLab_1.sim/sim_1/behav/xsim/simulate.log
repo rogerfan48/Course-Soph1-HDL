@@ -1,0 +1,30 @@
+Time resolution is 1 ps
+abcd
+bacd
+abcd
+acbd
+bcad
+cabd
+cbad
+abdc
+badc
+abdc
+adbc
+bdac
+dabc
+dbac
+abdc
+badc
+abdc
+acdb
+bcda
+cadb
+cbda
+abcd
+bacd
+abcd
+adcb
+bdca
+dacb
+dbca
+$finish called at time : 32 ns : File "C:/Users/johnn/Team1_AdvancedLab_1/Crossbar_4x4_4bit_t.v" Line 16
