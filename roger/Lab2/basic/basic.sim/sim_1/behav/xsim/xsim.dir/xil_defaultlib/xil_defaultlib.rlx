@@ -1,0 +1,10 @@
+0.6
+2019.2
+Nov  6 2019
+21:57:16
+C:/Users/User/Desktop/Lab2/basic/basic.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
+C:/Users/User/Desktop/Lab2/basic/basic.srcs/sources_1/imports/Lab2/Adders_t.v,1726731033,verilog,,,,Adders_t,,,,,,,,
+C:/Users/User/Desktop/Lab2/basic/basic.srcs/sources_1/imports/Lab2/Lab2_Adders.v,1726735966,verilog,,C:/Users/User/Desktop/Lab2/basic/basic.srcs/sources_1/imports/Lab2/Lab2_Majority.v,,Full_Adder;Half_Adder,,,,,,,,
+C:/Users/User/Desktop/Lab2/basic/basic.srcs/sources_1/imports/Lab2/Lab2_Majority.v,1726734756,verilog,,C:/Users/User/Desktop/Lab2/basic/basic.srcs/sources_1/imports/Lab2/Lab2_NAND_Implement.v,,Majority,,,,,,,,
+C:/Users/User/Desktop/Lab2/basic/basic.srcs/sources_1/imports/Lab2/Lab2_NAND_Implement.v,1726734238,verilog,,C:/Users/User/Desktop/Lab2/basic/basic.srcs/sources_1/imports/Lab2/Adders_t.v,,AND4_w_NAND;AND_w_NAND;NAND_Implement;NOR_w_NAND;NOT_w_NAND;OR4_w_NAND;OR8_w_NAND;OR_w_NAND;XNOR_w_NAND;XOR_w_NAND,,,,,,,,
+C:/Users/User/Desktop/Lab2/basic/basic.srcs/sources_1/imports/Lab2/Majority_t.v,1726731032,verilog,,,,Majority_t,,,,,,,,
