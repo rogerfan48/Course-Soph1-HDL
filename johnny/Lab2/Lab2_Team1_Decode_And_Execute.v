@@ -1,4 +1,3 @@
-//`include "Universal_Gate.v"
 `timescale 1ps/1ps
 
 module Decode_And_Execute(rs, rt, sel, rd);

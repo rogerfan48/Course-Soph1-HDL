@@ -4,21 +4,18 @@ module Decode_And_Execute_t();
     reg unsigned [3:0] rs = 4'b0, rt = 4'b0;
     wire unsigned [3:0] rd;
     reg [2:0] sel = 3'b000;
-    reg error;
+    wire error;
     reg unsigned [3:0] test;
     Decode_And_Execute G1(rs, rt, sel, rd);
+    assign error = !(rd == test);
     initial begin
-        $dumpfile("Decode_And_Execute_t.vcd");
-        $dumpvars(0, Decode_And_Execute_t);
         repeat(2**4)begin
             repeat(2**4-1)begin
-                //
                 test = rs - rt;
-                error = !(rd == test);
-                //
                 #1
                 rt = rt + 4'b1;
             end
+            test = rs - rt;
             #1 
             rs = rs + 4'b1;
             rt = 4'b0;
@@ -27,13 +24,11 @@ module Decode_And_Execute_t();
         sel = sel + 3'b1;
         repeat(2**4)begin
             repeat(2**4-1)begin
-                //
                 test = rs + rt;
-                error = !(rd == test);
-                //
                 #1
                 rt = rt + 4'b1;
             end
+            test = rs + rt;
             #1 
             rs = rs + 4'b1;
             rt = 4'b0;
@@ -42,13 +37,11 @@ module Decode_And_Execute_t();
         sel = sel + 3'b1;
         repeat(2**4)begin
             repeat(2**4-1)begin
-                //
                 test = rs | rt;
-                error = !(rd == test);
-                //
                 #1
                 rt = rt + 4'b1;
             end
+            test = rs | rt;
             #1 
             rs = rs + 4'b1;
             rt = 4'b0;
@@ -57,13 +50,11 @@ module Decode_And_Execute_t();
         sel = sel + 3'b1;
         repeat(2**4)begin
             repeat(2**4-1)begin
-                //
                 test = rs & rt;
-                error = !(rd == test);
-                //
                 #1
                 rt = rt + 4'b1;
             end
+            test = rs & rt;
             #1 
             rs = rs + 4'b1;
             rt = 4'b0;
@@ -72,13 +63,11 @@ module Decode_And_Execute_t();
         sel = sel + 3'b1;
         repeat(2**4)begin
             repeat(2**4-1)begin
-                //
                 test = {rt[3], rt[3], rt[2], rt[1]};
-                error = !(rd == test);
-                //
                 #1
                 rt = rt + 4'b1;
             end
+            test = {rt[3], rt[3], rt[2], rt[1]};
             #1 
             rs = rs + 4'b1;
             rt = 4'b0;
@@ -87,13 +76,11 @@ module Decode_And_Execute_t();
         sel = sel + 3'b1;
         repeat(2**4)begin
             repeat(2**4-1)begin
-                //
                 test = {rs[2], rs[1], rs[0], rs[3]};
-                error = !(rd == test);
-                //
                 #1
                 rt = rt + 4'b1;
             end
+            test = {rs[2], rs[1], rs[0], rs[3]};
             #1 
             rs = rs + 4'b1;
             rt = 4'b0;
@@ -102,13 +89,11 @@ module Decode_And_Execute_t();
         sel = sel + 3'b1;
         repeat(2**4)begin
             repeat(2**4-1)begin
-                //
                 test = {1'b1, 1'b0, 1'b1, rs < rt};
-                error = !(rd == test);
-                //
                 #1
                 rt = rt + 4'b1;
             end
+            test = {1'b1, 1'b0, 1'b1, rs < rt};
             #1 
             rs = rs + 4'b1;
             rt = 4'b0;
@@ -117,13 +102,11 @@ module Decode_And_Execute_t();
         sel = sel + 3'b1;
         repeat(2**4)begin
             repeat(2**4-1)begin
-                //
                 test = {1'b1, 1'b1, 1'b1, rt == rs};
-                error = !(rd == test);
-                //
                 #1
                 rt = rt + 4'b1;
             end
+            test = {1'b1, 1'b1, 1'b1, rt == rs};
             #1 
             rs = rs + 4'b1;
             rt = 4'b0;
@@ -134,9 +117,9 @@ endmodule
 
 //Aq2
 module Decode_And_Execute(rs, rt, sel, rd);
-    input [4-1:0] rs, rt;
+    input unsigned [4-1:0] rs, rt;
     input [3-1:0] sel;
-    output [4-1:0] rd;
+    output unsigned [4-1:0] rd;
     wire [3:0] con1, con2, con3, con4, con5, con6, con7, con8;
     SUB G1(con1, rs, rt, sel);
     ADD G2(con2, rs, rt, sel);
@@ -151,8 +134,8 @@ endmodule
 
 module Compare_EQ(rd, rs, rt, sel);
     input [2:0] sel;
-    input [3:0] rs, rt;
-    output [3:0] rd;
+    input unsigned [3:0] rs, rt;
+    output unsigned [3:0] rd;
     Not_Gate G4(rd[3], 1'b0);
     Not_Gate G5(rd[2], 1'b0);
     Not_Gate G6(rd[1], 1'b0);
@@ -167,8 +150,8 @@ endmodule
 
 module Compare_LT(rd, rs, rt, sel);
     input [2:0] sel;
-    input [3:0] rs, rt;
-    output [3:0] rd;
+    input unsigned [3:0] rs, rt;
+    output unsigned [3:0] rd;
     Not_Gate G4(rd[3], 1'b0);
     Not_Gate G5(rd[2], 1'b1);
     Not_Gate G6(rd[1], 1'b0);
@@ -189,8 +172,8 @@ endmodule
 
 module Left_Shift(rd, rs, rt, sel);
     input [2:0] sel;
-    input [3:0] rs, rt;
-    output [3:0] rd;
+    input unsigned [3:0] rs, rt;
+    output unsigned [3:0] rd;
     Or_Gate G3(rd[3], rs[2], 1'b0);
     Or_Gate G4(rd[2], rs[1], 1'b0);
     Or_Gate G5(rd[1], rs[0], 1'b0);
@@ -199,8 +182,8 @@ endmodule
 
 module Right_Shift(rd, rs, rt, sel);
     input [2:0] sel;
-    input [3:0] rs, rt;
-    output [3:0] rd;
+    input unsigned [3:0] rs, rt;
+    output unsigned [3:0] rd;
     Or_Gate G3(rd[3], rt[3], 1'b0);
     Or_Gate G4(rd[2], rt[3], 1'b0);
     Or_Gate G5(rd[1], rt[2], 1'b0);
@@ -209,8 +192,8 @@ endmodule
 
 module Bitwise_And(rd, rs, rt, sel);
     input [2:0] sel;
-    input [3:0] rs, rt;
-    output [3:0] rd;
+    input unsigned [3:0] rs, rt;
+    output unsigned [3:0] rd;
     And_Gate G0(rd[0], rs[0], rt[0]);
     And_Gate G1(rd[1], rs[1], rt[1]);
     And_Gate G2(rd[2], rs[2], rt[2]);
@@ -219,8 +202,8 @@ endmodule
 
 module Bitwise_Or(rd, rs, rt, sel);
     input [2:0] sel;
-    input [3:0] rs, rt;
-    output [3:0] rd;
+    input unsigned [3:0] rs, rt;
+    output unsigned [3:0] rd;
     Or_Gate G0(rd[0], rs[0], rt[0]);
     Or_Gate G1(rd[1], rs[1], rt[1]);
     Or_Gate G2(rd[2], rs[2], rt[2]);
@@ -229,15 +212,15 @@ endmodule
 
 module ADD(rd, rs, rt, sel);
     input [2:0] sel;
-    input [3:0] rs, rt;
-    output [3:0] rd;
+    input unsigned [3:0] rs, rt;
+    output unsigned [3:0] rd;
     Ripple_Carry_Adder_4 G3(rs, rt, 1'b0, cout, rd);
 endmodule
 
 module SUB(rd, rs, rt, sel);
     input [2:0] sel;
-    input [3:0] rs, rt;
-    output [3:0] rd;
+    input unsigned [3:0] rs, rt;
+    output unsigned [3:0] rd;
     wire [3:0] n_rt;
     Not_4 G1(n_rt, rt);
     Ripple_Carry_Adder_4 G4(rs, n_rt, 1'b1, cout, rd);
@@ -287,10 +270,10 @@ module Not_4(out, in);
 endmodule
 
 module Ripple_Carry_Adder_4(a, b, cin, cout, sum);
-    input [3:0] a, b;
+    input unsigned [3:0] a, b;
     input cin;
     output cout;
-    output [3:0] sum;
+    output unsigned [3:0] sum;
     Full_Adder G0(a[0], b[0], cin, cout0, sum[0]);
     Full_Adder G1(a[1], b[1], cout0, cout1, sum[1]);
     Full_Adder G2(a[2], b[2], cout1, cout2, sum[2]);
