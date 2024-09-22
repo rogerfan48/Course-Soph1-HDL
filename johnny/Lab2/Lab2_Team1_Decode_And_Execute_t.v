@@ -1,6 +1,138 @@
-//`include "Universal_Gate.v"
-`timescale 1ps/1ps
+`timescale 1ns/1ps
 
+module Decode_And_Execute_t();
+    reg unsigned [3:0] rs = 4'b0, rt = 4'b0;
+    wire unsigned [3:0] rd;
+    reg [2:0] sel = 3'b000;
+    reg error;
+    reg unsigned [3:0] test;
+    Decode_And_Execute G1(rs, rt, sel, rd);
+    initial begin
+        $dumpfile("Decode_And_Execute_t.vcd");
+        $dumpvars(0, Decode_And_Execute_t);
+        repeat(2**4)begin
+            repeat(2**4-1)begin
+                //
+                test = rs - rt;
+                error = !(rd == test);
+                //
+                #1
+                rt = rt + 4'b1;
+            end
+            #1 
+            rs = rs + 4'b1;
+            rt = 4'b0;
+        end
+        rt = 4'b0;
+        sel = sel + 3'b1;
+        repeat(2**4)begin
+            repeat(2**4-1)begin
+                //
+                test = rs + rt;
+                error = !(rd == test);
+                //
+                #1
+                rt = rt + 4'b1;
+            end
+            #1 
+            rs = rs + 4'b1;
+            rt = 4'b0;
+        end
+        rt = 4'b0;
+        sel = sel + 3'b1;
+        repeat(2**4)begin
+            repeat(2**4-1)begin
+                //
+                test = rs | rt;
+                error = !(rd == test);
+                //
+                #1
+                rt = rt + 4'b1;
+            end
+            #1 
+            rs = rs + 4'b1;
+            rt = 4'b0;
+        end
+        rt = 4'b0;
+        sel = sel + 3'b1;
+        repeat(2**4)begin
+            repeat(2**4-1)begin
+                //
+                test = rs & rt;
+                error = !(rd == test);
+                //
+                #1
+                rt = rt + 4'b1;
+            end
+            #1 
+            rs = rs + 4'b1;
+            rt = 4'b0;
+        end 
+        rt = 4'b0;
+        sel = sel + 3'b1;
+        repeat(2**4)begin
+            repeat(2**4-1)begin
+                //
+                test = {rt[3], rt[3], rt[2], rt[1]};
+                error = !(rd == test);
+                //
+                #1
+                rt = rt + 4'b1;
+            end
+            #1 
+            rs = rs + 4'b1;
+            rt = 4'b0;
+        end
+        rt = 4'b0;
+        sel = sel + 3'b1;
+        repeat(2**4)begin
+            repeat(2**4-1)begin
+                //
+                test = {rs[2], rs[1], rs[0], rs[3]};
+                error = !(rd == test);
+                //
+                #1
+                rt = rt + 4'b1;
+            end
+            #1 
+            rs = rs + 4'b1;
+            rt = 4'b0;
+        end
+        rt = 4'b0;
+        sel = sel + 3'b1;
+        repeat(2**4)begin
+            repeat(2**4-1)begin
+                //
+                test = {1'b1, 1'b0, 1'b1, rs < rt};
+                error = !(rd == test);
+                //
+                #1
+                rt = rt + 4'b1;
+            end
+            #1 
+            rs = rs + 4'b1;
+            rt = 4'b0;
+        end
+        rt = 4'b0;
+        sel = sel + 3'b1;
+        repeat(2**4)begin
+            repeat(2**4-1)begin
+                //
+                test = {1'b1, 1'b1, 1'b1, rt == rs};
+                error = !(rd == test);
+                //
+                #1
+                rt = rt + 4'b1;
+            end
+            #1 
+            rs = rs + 4'b1;
+            rt = 4'b0;
+        end
+        $finish;
+    end
+endmodule
+
+//Aq2
 module Decode_And_Execute(rs, rt, sel, rd);
     input [4-1:0] rs, rt;
     input [3-1:0] sel;
@@ -229,7 +361,6 @@ module Not_Gate(out, in);
 endmodule
 
 //implement universal gate
-//need to delete
 module Universal_Gate(out, a, b);
     input a, b;
     output out;
