@@ -1,0 +1,10 @@
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+C:/Users/sweri/Desktop/HD/roger/Lab2/a1_Ripple_Carry_Adder.v,1727061251,verilog,,C:/Users/sweri/Desktop/HD/roger/Lab2/a2_Decode_And_Execute.v,,AND_w_NAND;OR_w_NAND;Ripple_Carry_Adder;XOR_w_NAND,,,,,,,,
+C:/Users/sweri/Desktop/HD/roger/Lab2/a1_Ripple_Carry_Adder_t.v,1727079669,verilog,,,,Ripple_Carry_Adder_t,,,,,,,,
+C:/Users/sweri/Desktop/HD/roger/Lab2/a2_Decode_And_Execute.v,1727084536,verilog,,C:/Users/sweri/Desktop/HD/roger/Lab2/a_Universal_Gate.v,,AND3_wu;AND4_wu;AND_wu;BUF_wu;Compare;Decode_And_Execute;Full_Adder;Left_Shift_4bit;MUX_8x1_1bit;MUX_8x1_4bit;Majority;NOR_wu;NOT_wu;OR4_wu;OR8_wu;OR_wu;RCA_4bit;RCA_4bit_Minus;Right_Shift_4bit;XOR_wu,,,,,,,,
+C:/Users/sweri/Desktop/HD/roger/Lab2/a2_Decode_And_Execute_t.v,1727080309,verilog,,,,Decode_And_Execute_t,,,,,,,,
+C:/Users/sweri/Desktop/HD/roger/Lab2/a_Universal_Gate.v,1727082346,verilog,,C:/Users/sweri/Desktop/HD/roger/Lab2/a2_Decode_And_Execute_t.v,,Universal_Gate,,,,,,,,
+C:/Users/sweri/Desktop/HD/roger/Lab2/advanced/advanced.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,

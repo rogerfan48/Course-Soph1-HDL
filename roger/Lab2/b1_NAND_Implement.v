@@ -6,30 +6,39 @@ module NAND_Implement (a, b, sel, out);
     output out;
 
     wire con0, con1, con2, con3, con4, con5, con6, con7;
-    wire link0, link1, link2, link3, link4, link5, link6, link7;
+
+    nand NAND1 (con0, a, b);
+    AND_w_NAND AND1 (con1, a, b);
+    OR_w_NAND OR1 (con2, a, b);
+    NOR_w_NAND NOR1 (con3, a, b);
+    XOR_w_NAND XOR1 (con4, a, b);
+    XNOR_w_NAND XNOR1 (con5, a, b);
+    NOT_w_NAND NOT4 (con6, a);
+    NOT_w_NAND NOT5 (con7, a);
+
+    MUX_8x1_1bit MUX1(con0, con1, con2, con3, con4, con5, con6, con7, sel, out);
+endmodule
+
+module MUX_8x1_1bit(a0, a1, a2, a3, a4, a5, a6, a7, sel, out);
+    input a0, a1, a2, a3, a4, a5, a6, a7;
+    input [3-1:0] sel;
+    output out;
+
+    wire con0, con1, con2, con3, con4, con5, con6, con7;
     wire [3-1:0] n_sel;
 
     NOT_w_NAND NOT1(n_sel[0], sel[0]);
     NOT_w_NAND NOT2(n_sel[1], sel[1]);
     NOT_w_NAND NOT3(n_sel[2], sel[2]);
 
-    nand NAND1 (link0, a, b);
-    AND_w_NAND AND1 (link1, a, b);
-    OR_w_NAND OR1 (link2, a, b);
-    NOR_w_NAND NOR1 (link3, a, b);
-    XOR_w_NAND XOR1 (link4, a, b);
-    XNOR_w_NAND XNOR1 (link5, a, b);
-    NOT_w_NAND NOT4 (link6, a);
-    NOT_w_NAND NOT5 (link7, a);
-
-    AND4_w_NAND AND4_0(con0, link0, n_sel[0], n_sel[1], n_sel[2]);
-    AND4_w_NAND AND4_1(con1, link1, sel[0], n_sel[1], n_sel[2]);
-    AND4_w_NAND AND4_2(con2, link2, n_sel[0], sel[1], n_sel[2]);
-    AND4_w_NAND AND4_3(con3, link3, sel[0], sel[1], n_sel[2]);
-    AND4_w_NAND AND4_4(con4, link4, n_sel[0], n_sel[1], sel[2]);
-    AND4_w_NAND AND4_5(con5, link5, sel[0], n_sel[1], sel[2]);
-    AND4_w_NAND AND4_6(con6, link6, n_sel[0], sel[1], sel[2]);
-    AND4_w_NAND AND4_7(con7, link7, sel[0], sel[1], sel[2]);
+    AND4_w_NAND AND4_0(con0, a0, n_sel[0], n_sel[1], n_sel[2]);
+    AND4_w_NAND AND4_1(con1, a1, sel[0], n_sel[1], n_sel[2]);
+    AND4_w_NAND AND4_2(con2, a2, n_sel[0], sel[1], n_sel[2]);
+    AND4_w_NAND AND4_3(con3, a3, sel[0], sel[1], n_sel[2]);
+    AND4_w_NAND AND4_4(con4, a4, n_sel[0], n_sel[1], sel[2]);
+    AND4_w_NAND AND4_5(con5, a5, sel[0], n_sel[1], sel[2]);
+    AND4_w_NAND AND4_6(con6, a6, n_sel[0], sel[1], sel[2]);
+    AND4_w_NAND AND4_7(con7, a7, sel[0], sel[1], sel[2]);
 
     OR8_w_NAND OR8_1(out, con0, con1, con2, con3, con4, con5, con6, con7);
 endmodule

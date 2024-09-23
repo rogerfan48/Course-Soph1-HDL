@@ -1,0 +1,26 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/sweri/Desktop/HD/roger/Lab2/a2_Decode_And_Execute.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decode_And_Execute
+INFO: [VRFC 10-311] analyzing module MUX_8x1_4bit
+INFO: [VRFC 10-311] analyzing module MUX_8x1_1bit
+INFO: [VRFC 10-311] analyzing module Compare
+INFO: [VRFC 10-311] analyzing module Right_Shift_4bit
+INFO: [VRFC 10-311] analyzing module Left_Shift_4bit
+INFO: [VRFC 10-311] analyzing module RCA_4bit_Minus
+INFO: [VRFC 10-311] analyzing module RCA_4bit
+INFO: [VRFC 10-311] analyzing module Full_Adder
+INFO: [VRFC 10-311] analyzing module Majority
+INFO: [VRFC 10-311] analyzing module BUF_wu
+INFO: [VRFC 10-311] analyzing module NOT_wu
+INFO: [VRFC 10-311] analyzing module AND_wu
+INFO: [VRFC 10-311] analyzing module AND3_wu
+INFO: [VRFC 10-311] analyzing module AND4_wu
+INFO: [VRFC 10-311] analyzing module OR_wu
+INFO: [VRFC 10-311] analyzing module OR4_wu
+INFO: [VRFC 10-311] analyzing module OR8_wu
+INFO: [VRFC 10-311] analyzing module NOR_wu
+INFO: [VRFC 10-311] analyzing module XOR_wu
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/sweri/Desktop/HD/roger/Lab2/a_Universal_Gate.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Universal_Gate
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/sweri/Desktop/HD/roger/Lab2/a2_Decode_And_Execute_t.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decode_And_Execute_t
+WARNING: [VRFC 10-8370] keyword 'unsigned' is not allowed here in this mode of Verilog [C:/Users/sweri/Desktop/HD/roger/Lab2/a2_Decode_And_Execute_t.v:9]
