@@ -1,4 +1,3 @@
-`include "Lab2_Team1_Decode_And_Execute.v"
 `timescale 1ns/1ps
 
 module Decode_And_Execute_t();

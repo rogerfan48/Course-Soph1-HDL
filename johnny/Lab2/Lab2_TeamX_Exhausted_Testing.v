@@ -30,34 +30,21 @@ Ripple_Carry_Adder rca(
 );
 
 initial begin
-    // design you test pattern here.
-    // Remember to set the input pattern to the test instance every 5 nanasecond
-    // Check the output and set the `error` signal accordingly 1 nanosecond after new input is set.
-    // Also set the done signal to 1'b1 5 nanoseconds after the test is finished.
-    // Example:
-    // setting the input
-    // a = 4'b0000;
-    // b = 4'b0000;
-    // cin = 1'b0;
-    // check the output
-    // #1
-    // check_output;
-    // #4
-    // setting another input
-    // a = 4'b0001;
-    // b = 4'b0000;
-    // cin = 1'b0;
-    //.....
-    // #4
-    // The last input pattern
-    // a = 4'b1111;
-    // b = 4'b1111;
-    // cin = 1'b1;
-    // #1
-    // check_output;
-    // #4
-    // setting the done signal
-    // done = 1'b1;
+    repeat (2**4) begin
+        repeat (2**4-1) begin
+            #0.001
+            error = (sum != a+b);
+            #0.004
+            b = b + 4'b1;
+        end
+        #0.001
+        error = (sum != a+b);
+        #0.004
+        a = a + 4'b1;
+        b = 4'b0;
+    end
+    #0.001 error = (sum != a+b);
+    #0.004 done = 1'b1;
 end
 
 endmodule
