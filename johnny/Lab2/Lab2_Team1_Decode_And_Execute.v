@@ -1,25 +1,24 @@
 `timescale 1ps/1ps
 
 module Decode_And_Execute(rs, rt, sel, rd);
-    input unsigned [4-1:0] rs, rt;
+    input [4-1:0] rs, rt;
     input [3-1:0] sel;
-    output unsigned [4-1:0] rd;
+    output [4-1:0] rd;
     wire [3:0] con1, con2, con3, con4, con5, con6, con7, con8;
-    SUB G1(con1, rs, rt, sel);
-    ADD G2(con2, rs, rt, sel);
-    Bitwise_Or G3(con3, rs, rt, sel);
-    Bitwise_And G4(con4, rs, rt, sel);
-    Right_Shift G5(con5, rs, rt, sel);
-    Left_Shift G6(con6, rs, rt, sel);
-    Compare_LT G7(con7, rs, rt, sel);
-    Compare_EQ G8(con8, rs, rt, sel);
+    SUB G1(con1, rs, rt);
+    ADD G2(con2, rs, rt);
+    Bitwise_Or G3(con3, rs, rt);
+    Bitwise_And G4(con4, rs, rt);
+    Right_Shift G5(con5, rt);
+    Left_Shift G6(con6, rs);
+    Compare_LT G7(con7, rs, rt);
+    Compare_EQ G8(con8, rs, rt);
     Mux_8x1_4bit G9(rd, con1, con2, con3, con4, con5, con6, con7, con8, sel);
 endmodule
 
-module Compare_EQ(rd, rs, rt, sel);
-    input [2:0] sel;
-    input unsigned [3:0] rs, rt;
-    output unsigned [3:0] rd;
+module Compare_EQ(rd, rs, rt);
+    input [3:0] rs, rt;
+    output [3:0] rd;
     Not_Gate G4(rd[3], 1'b0);
     Not_Gate G5(rd[2], 1'b0);
     Not_Gate G6(rd[1], 1'b0);
@@ -32,10 +31,9 @@ module Compare_EQ(rd, rs, rt, sel);
     And_Gate G13(rd[0], con6, con4);
 endmodule
 
-module Compare_LT(rd, rs, rt, sel);
-    input [2:0] sel;
-    input unsigned [3:0] rs, rt;
-    output unsigned [3:0] rd;
+module Compare_LT(rd, rs, rt);
+    input [3:0] rs, rt;
+    output [3:0] rd;
     Not_Gate G4(rd[3], 1'b0);
     Not_Gate G5(rd[2], 1'b1);
     Not_Gate G6(rd[1], 1'b0);
@@ -54,57 +52,51 @@ module Compare_LT(rd, rs, rt, sel);
     Or_Gate F13(rd[0], con10, con12);
 endmodule
 
-module Left_Shift(rd, rs, rt, sel);
-    input [2:0] sel;
-    input unsigned [3:0] rs, rt;
-    output unsigned [3:0] rd;
+module Left_Shift(rd, rs);
+    input [3:0] rs;
+    output [3:0] rd;
     Or_Gate G3(rd[3], rs[2], 1'b0);
     Or_Gate G4(rd[2], rs[1], 1'b0);
     Or_Gate G5(rd[1], rs[0], 1'b0);
     Or_Gate G6(rd[0], rs[3], 1'b0);
 endmodule
 
-module Right_Shift(rd, rs, rt, sel);
-    input [2:0] sel;
-    input unsigned [3:0] rs, rt;
-    output unsigned [3:0] rd;
+module Right_Shift(rd, rt);
+    input [3:0] rt;
+    output [3:0] rd;
     Or_Gate G3(rd[3], rt[3], 1'b0);
     Or_Gate G4(rd[2], rt[3], 1'b0);
     Or_Gate G5(rd[1], rt[2], 1'b0);
     Or_Gate G6(rd[0], rt[1], 1'b0);
 endmodule
 
-module Bitwise_And(rd, rs, rt, sel);
-    input [2:0] sel;
-    input unsigned [3:0] rs, rt;
-    output unsigned [3:0] rd;
+module Bitwise_And(rd, rs, rt);
+    input [3:0] rs, rt;
+    output [3:0] rd;
     And_Gate G0(rd[0], rs[0], rt[0]);
     And_Gate G1(rd[1], rs[1], rt[1]);
     And_Gate G2(rd[2], rs[2], rt[2]);
     And_Gate G3(rd[3], rs[3], rt[3]);
 endmodule
 
-module Bitwise_Or(rd, rs, rt, sel);
-    input [2:0] sel;
-    input unsigned [3:0] rs, rt;
-    output unsigned [3:0] rd;
+module Bitwise_Or(rd, rs, rt);
+    input [3:0] rs, rt;
+    output [3:0] rd;
     Or_Gate G0(rd[0], rs[0], rt[0]);
     Or_Gate G1(rd[1], rs[1], rt[1]);
     Or_Gate G2(rd[2], rs[2], rt[2]);
     Or_Gate G3(rd[3], rs[3], rt[3]);
 endmodule
 
-module ADD(rd, rs, rt, sel);
-    input [2:0] sel;
-    input unsigned [3:0] rs, rt;
-    output unsigned [3:0] rd;
+module ADD(rd, rs, rt);
+    input [3:0] rs, rt;
+    output [3:0] rd;
     Ripple_Carry_Adder_4 G3(rs, rt, 1'b0, cout, rd);
 endmodule
 
-module SUB(rd, rs, rt, sel);
-    input [2:0] sel;
-    input unsigned [3:0] rs, rt;
-    output unsigned [3:0] rd;
+module SUB(rd, rs, rt);
+    input [3:0] rs, rt;
+    output [3:0] rd;
     wire [3:0] n_rt;
     Not_4 G1(n_rt, rt);
     Ripple_Carry_Adder_4 G4(rs, n_rt, 1'b1, cout, rd);
@@ -154,10 +146,10 @@ module Not_4(out, in);
 endmodule
 
 module Ripple_Carry_Adder_4(a, b, cin, cout, sum);
-    input unsigned [3:0] a, b;
+    input [3:0] a, b;
     input cin;
     output cout;
-    output unsigned [3:0] sum;
+    output [3:0] sum;
     Full_Adder G0(a[0], b[0], cin, cout0, sum[0]);
     Full_Adder G1(a[1], b[1], cout0, cout1, sum[1]);
     Full_Adder G2(a[2], b[2], cout1, cout2, sum[2]);
