@@ -44,7 +44,7 @@ initial begin
         b = 4'b0;
     end
     #0.001 error = (sum != a+b);
-    #0.004 done = 1'b1;
+    done = 1'b1;
 end
 
 endmodule

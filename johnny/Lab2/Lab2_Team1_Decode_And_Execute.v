@@ -161,7 +161,7 @@ module Ripple_Carry_Adder_4(a, b, cin, cout, sum);
     Full_Adder G0(a[0], b[0], cin, cout0, sum[0]);
     Full_Adder G1(a[1], b[1], cout0, cout1, sum[1]);
     Full_Adder G2(a[2], b[2], cout1, cout2, sum[2]);
-    Full_Adder G3(a[3], b[3], cout2, cout3, sum[3]);
+    Full_Adder G3(a[3], b[3], cout2, cout, sum[3]);
 endmodule
 
 module Full_Adder(a, b, cin, cout, sum);
