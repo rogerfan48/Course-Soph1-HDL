@@ -46,7 +46,6 @@ module Majority(a, b, c, out);
     OR_w_NAND OR2 (out, con3, con4);
 endmodule
 
-
 // ---- ---- COPY ---- ----
 
 module AND_w_NAND (out, a, b);
