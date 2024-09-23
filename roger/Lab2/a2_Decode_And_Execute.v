@@ -8,8 +8,8 @@ module Decode_And_Execute(rs, rt, sel, rd);
     wire [4-1:0] con0, con1, con2, con3, con4, con5, con6, con7;
     wire no_use0, no_use1;
 
-    RCA_4bit_Minus RCAM1(rs, rt, 1, no_use0, con0);
-    RCA_4bit RCA1(rs, rt, 0, no_use1, con1);
+    RCA_4bit_Minus RCAM1(rs, rt, 1'b1, no_use0, con0);
+    RCA_4bit RCA1(rs, rt, 1'b0, no_use1, con1);
     OR_wu OR0(con2[0], rs[0], rt[0]);
     OR_wu OR1(con2[1], rs[1], rt[1]);
     OR_wu OR2(con2[2], rs[2], rt[2]);
@@ -20,10 +20,43 @@ module Decode_And_Execute(rs, rt, sel, rd);
     AND_wu AND3(con3[3], rs[3], rt[3]);
     Right_Shift_4bit RS1(rt, con4);
     Left_Shift_4bit LS1(rs, con5);
-    Compare compare1(rs, rt, con6, con7);
+    Compare compare1(rs, rt, con6[0], con7[0]);
 
-    MUX_8x1_4bit MUX1(con0, con1, con2, con3, con4, con5, con6, con7, sel, rd);
+    BUF_wu BUF1(con6[1], 1'b1);
+    BUF_wu BUF2(con6[2], 1'b0);
+    BUF_wu BUF3(con6[3], 1'b1);
+    BUF_wu BUF4(con7[1], 1'b1);
+    BUF_wu BUF5(con7[2], 1'b1);
+    BUF_wu BUF6(con7[3], 1'b1);
+
+    // Mux_2x1_4bit MUX2_1_1(4'b0, LTbit, isLT, con6);
+    // Mux_2x1_4bit MUX2_1_2(4'b0, EQbit, isEQ, con7);
+
+    MUX_8x1_4bit MUX8_1(con0, con1, con2, con3, con4, con5, con6, con7, sel, rd);
 endmodule
+
+// module Mux_2x1_4bit (a, b, sel, out);
+//     input [4-1:0] a, b;
+//     input sel;
+//     output [4-1:0] out;
+
+//     wire n_sel;
+//     wire [4-1:0] con1, con2;
+
+//     NOT_wu NOT1(n_sel, sel);
+//     AND_wu AND10(con1[0], a[0], n_sel);
+//     AND_wu AND20(con2[0], b[0], sel);
+//     AND_wu AND11(con1[1], a[1], n_sel);
+//     AND_wu AND21(con2[1], b[1], sel);
+//     AND_wu AND12(con1[2], a[2], n_sel);
+//     AND_wu AND22(con2[2], b[2], sel);
+//     AND_wu AND13(con1[3], a[3], n_sel);
+//     AND_wu AND23(con2[3], b[3], sel);
+//     OR_wu OR0(out[0], con1[0], con2[0]);
+//     OR_wu OR1(out[1], con1[1], con2[1]);
+//     OR_wu OR2(out[2], con1[2], con2[2]);
+//     OR_wu OR3(out[3], con1[3], con2[3]);
+// endmodule
 
 module MUX_8x1_4bit (a0, a1, a2, a3, a4, a5, a6, a7, sel, out);
     input [4-1:0] a0, a1, a2, a3, a4, a5, a6, a7;
@@ -124,7 +157,7 @@ module Left_Shift_4bit (a, out);
     BUF_wu BUF3(out[0], a[3]);
 endmodule
 
-module RCA_4bit_Minus (a, b, cin, cout, sum)
+module RCA_4bit_Minus (a, b, cin, cout, sum);
     input [4-1:0] a, b;
     input cin;
     output cout;
@@ -196,7 +229,7 @@ module AND_wu (out, a, b);
     output out;
     wire n_b;
     NOT_wu NOT1(n_b, b);
-    Universal_Gate UG1(out,, a, n_b);
+    Universal_Gate UG1(out, a, n_b);
 endmodule
 
 module AND3_wu (out, a, b, c);
@@ -234,12 +267,22 @@ module OR4_wu (out, a, b, c, d);
     OR_wu OR3(out, con1, con2);
 endmodule
 
+module OR8_wu (out, a, b, c, d, e, f, g, h);
+    input a, b, c, d, e, f, g, h;
+    output out;
+    wire con1, con2;
+    OR4_wu OR1(con1, a, b, c, d);
+    OR4_wu OR2(con2, e, f, g, h);
+    OR_wu OR3(out, con1, con2);
+endmodule
+
 module NOR_wu (out, a, b);
     input a, b;
     output out;
     wire con1;
     OR_wu OR1(con1, a, b);
     NOT_wu NOT1(out, con1);
+endmodule
 
 module XOR_wu (out, a, b);
     input a, b;
