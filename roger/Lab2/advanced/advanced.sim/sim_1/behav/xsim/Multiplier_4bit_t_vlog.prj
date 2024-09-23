@@ -1,8 +1,7 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
-"../../../../../a2_Decode_And_Execute.v" \
-"../../../../../a_Universal_Gate.v" \
-"../../../../../a2_Decode_And_Execute_t.v" \
+"../../../../../a4_Multiplier_4bit.v" \
+"../../../../../a4_Multiplier_4bit_t.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

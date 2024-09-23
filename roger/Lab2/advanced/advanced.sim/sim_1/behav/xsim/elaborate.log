@@ -1,37 +1,25 @@
 Vivado Simulator v2022.2
 Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Decode_And_Execute_t_behav xil_defaultlib.Decode_And_Execute_t xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Multiplier_4bit_t_behav xil_defaultlib.Multiplier_4bit_t xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'a' [C:/Users/sweri/Desktop/HD/roger/Lab2/a2_Decode_And_Execute.v:224]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'cin' [C:/Users/sweri/Desktop/HD/roger/Lab2/a2_Decode_And_Execute.v:172]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'b' [C:/Users/sweri/Desktop/HD/roger/Lab2/a2_Decode_And_Execute.v:218]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'a' [C:/Users/sweri/Desktop/HD/roger/Lab2/a4_Multiplier_4bit.v:15]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'cin' [C:/Users/sweri/Desktop/HD/roger/Lab2/a4_Multiplier_4bit.v:20]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'cin' [C:/Users/sweri/Desktop/HD/roger/Lab2/a4_Multiplier_4bit.v:31]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'cin' [C:/Users/sweri/Desktop/HD/roger/Lab2/a4_Multiplier_4bit.v:42]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.Universal_Gate
-Compiling module xil_defaultlib.NOT_wu
-Compiling module xil_defaultlib.OR_wu
-Compiling module xil_defaultlib.XOR_wu
-Compiling module xil_defaultlib.AND_wu
+Compiling module xil_defaultlib.AND_w_NAND
+Compiling module xil_defaultlib.BUF_w_NAND
+Compiling module xil_defaultlib.XOR_w_NAND
+Compiling module xil_defaultlib.OR_w_NAND
 Compiling module xil_defaultlib.Majority
 Compiling module xil_defaultlib.Full_Adder
 Compiling module xil_defaultlib.RCA_4bit
-Compiling module xil_defaultlib.RCA_4bit_Minus
-Compiling module xil_defaultlib.BUF_wu
-Compiling module xil_defaultlib.Right_Shift_4bit
-Compiling module xil_defaultlib.Left_Shift_4bit
-Compiling module xil_defaultlib.NOR_wu
-Compiling module xil_defaultlib.AND3_wu
-Compiling module xil_defaultlib.AND4_wu
-Compiling module xil_defaultlib.OR4_wu
-Compiling module xil_defaultlib.Compare
-Compiling module xil_defaultlib.OR8_wu
-Compiling module xil_defaultlib.MUX_8x1_1bit
-Compiling module xil_defaultlib.MUX_8x1_4bit
-Compiling module xil_defaultlib.Decode_And_Execute
-Compiling module xil_defaultlib.Decode_And_Execute_t
+Compiling module xil_defaultlib.Multiplier_4bit
+Compiling module xil_defaultlib.Multiplier_4bit_t
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot Decode_And_Execute_t_behav
+Built simulation snapshot Multiplier_4bit_t_behav

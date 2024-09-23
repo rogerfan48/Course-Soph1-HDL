@@ -8,7 +8,7 @@ module Ripple_Carry_Adder_t();
     wire cout;
     wire [8-1:0] sum;
     
-    Ripple_Carry_Adder R1(a, b, cin, cout, sum);
+    Ripple_Carry_Adder RCA(a, b, cin, cout, sum);
     
     always #1 cin = ~cin;
     initial begin

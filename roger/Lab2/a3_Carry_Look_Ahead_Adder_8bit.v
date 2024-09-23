@@ -33,10 +33,10 @@ module CLA_4bit(a, b, cin, s, cout);
     CLG_4bit CLG1(p, g, cin, c);
 
     AND_w_NAND AND1(cout, 1, c[3]);
-    XOR_w_NAND XOR1(s[0], p[0], c0);
-    XOR_w_NAND XOR1(s[1], p[1], c[0]);
-    XOR_w_NAND XOR1(s[2], p[2], c[1]);
-    XOR_w_NAND XOR1(s[3], p[3], c[2]);
+    XOR_w_NAND XOR1(s[0], p[0], cin);
+    XOR_w_NAND XOR2(s[1], p[1], c[0]);
+    XOR_w_NAND XOR3(s[2], p[2], c[1]);
+    XOR_w_NAND XOR4(s[3], p[3], c[2]);
 endmodule
 
 module CLG_4bit(p, g, c0, c);
@@ -51,7 +51,7 @@ module CLG_4bit(p, g, c0, c);
 
     AND_w_NAND AND2(con2, p[1], g[0]);
     AND3_w_NAND AND_3_1(con3, p[1], p[0], c0);
-    OR3_w_NAND OR_3_1(c[1], G[1], con2, con3);
+    OR3_w_NAND OR_3_1(c[1], g[1], con2, con3);
 
     AND_w_NAND AND3(con4, p[2], g[1]);
     AND3_w_NAND AND_3_2(con5, p[2], p[1], g[0]);
@@ -62,7 +62,7 @@ module CLG_4bit(p, g, c0, c);
     AND3_w_NAND AND_3_3(con8, p[3], p[2], g[1]);
     AND4_w_NAND AND_4_2(con9, p[3], p[2], p[1], g[0]);
     AND5_w_NAND AND_5_1(con10, p[3], p[2], p[1], p[0], c0);
-    OR5_w_NAND OR_5_1(c[3], G[3], con7, con8, con9, con10);
+    OR5_w_NAND OR_5_1(c[3], g[3], con7, con8, con9, con10);
 endmodule
 
 module Signal_Splitter(a, upper, lower);
