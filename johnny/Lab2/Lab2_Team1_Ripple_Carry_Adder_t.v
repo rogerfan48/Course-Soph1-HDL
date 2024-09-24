@@ -8,7 +8,7 @@ module Ripple_Carry_Adder_t();
     Ripple_Carry_Adder R1(a, b, cin, cout, sum);
     always #1 cin = ~cin;
     initial begin
-        repeat(2**8-1) begin
+        repeat(2**8) begin
             repeat(2**8-1) begin
                 #2 b = b + 8'b1;
             end
