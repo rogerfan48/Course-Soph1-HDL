@@ -30,7 +30,7 @@ module CLA_4bit(a, b, cin, s, cout);
     Half_Adder HA2(a[2], b[2], g[2], p[2]);
     Half_Adder HA3(a[3], b[3], g[3], p[3]);
     
-    CLG_4bit CLG1(p, g, cin, c);
+    CLA_Gen_4bit CLG1(p, g, cin, c);
 
     AND_w_NAND AND1(cout, 1, c[3]);
     XOR_w_NAND XOR1(s[0], p[0], cin);
@@ -39,7 +39,7 @@ module CLA_4bit(a, b, cin, s, cout);
     XOR_w_NAND XOR4(s[3], p[3], c[2]);
 endmodule
 
-module CLG_4bit(p, g, c0, c);
+module CLA_Gen_4bit(p, g, c0, c);
     input [4-1:0] p, g;
     input c0;
     output [4-1:0] c;
