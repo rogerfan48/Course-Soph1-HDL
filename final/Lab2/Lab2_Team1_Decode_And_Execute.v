@@ -29,34 +29,8 @@ module Decode_And_Execute(rs, rt, sel, rd);
     BUF_wu BUF5(con7[2], 1'b1);
     BUF_wu BUF6(con7[3], 1'b1);
 
-    // Mux_2x1_4bit MUX2_1_1(4'b0, LTbit, isLT, con6);
-    // Mux_2x1_4bit MUX2_1_2(4'b0, EQbit, isEQ, con7);
-
     MUX_8x1_4bit MUX8_1(con0, con1, con2, con3, con4, con5, con6, con7, sel, rd);
 endmodule
-
-// module Mux_2x1_4bit (a, b, sel, out);
-//     input [4-1:0] a, b;
-//     input sel;
-//     output [4-1:0] out;
-
-//     wire n_sel;
-//     wire [4-1:0] con1, con2;
-
-//     NOT_wu NOT1(n_sel, sel);
-//     AND_wu AND10(con1[0], a[0], n_sel);
-//     AND_wu AND20(con2[0], b[0], sel);
-//     AND_wu AND11(con1[1], a[1], n_sel);
-//     AND_wu AND21(con2[1], b[1], sel);
-//     AND_wu AND12(con1[2], a[2], n_sel);
-//     AND_wu AND22(con2[2], b[2], sel);
-//     AND_wu AND13(con1[3], a[3], n_sel);
-//     AND_wu AND23(con2[3], b[3], sel);
-//     OR_wu OR0(out[0], con1[0], con2[0]);
-//     OR_wu OR1(out[1], con1[1], con2[1]);
-//     OR_wu OR2(out[2], con1[2], con2[2]);
-//     OR_wu OR3(out[3], con1[3], con2[3]);
-// endmodule
 
 module MUX_8x1_4bit (a0, a1, a2, a3, a4, a5, a6, a7, sel, out);
     input [4-1:0] a0, a1, a2, a3, a4, a5, a6, a7;

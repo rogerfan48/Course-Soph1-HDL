@@ -1,15 +1,11 @@
 `timescale 1ns/1ps
 
 module Ripple_Carry_Adder_t();
-    reg [8-1:0] a = 8'b0;
-    reg [8-1:0] b = 8'b0;
+    reg [7:0] a = 8'b0, b = 8'b0;
     reg cin = 1'b0;
-
+    wire [7:0] sum;
     wire cout;
-    wire [8-1:0] sum;
-    
-    Ripple_Carry_Adder RCA(a, b, cin, cout, sum);
-    
+    Ripple_Carry_Adder R1(a, b, cin, cout, sum);
     always #1 cin = ~cin;
     initial begin
         repeat(2**8) begin
