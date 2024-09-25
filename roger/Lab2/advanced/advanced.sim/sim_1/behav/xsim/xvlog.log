@@ -1,11 +1,17 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/sweri/Desktop/HD/roger/Lab2/a4_Multiplier_4bit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Multiplier_4bit
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/sweri/Desktop/HD/roger/Lab2/a3_Carry_Look_Ahead_Adder_8bit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Carry_Look_Ahead_Adder_8bit
+INFO: [VRFC 10-311] analyzing module CLA_4bit
+INFO: [VRFC 10-311] analyzing module CLA_Gen_4bit
+INFO: [VRFC 10-311] analyzing module Signal_Splitter
+INFO: [VRFC 10-311] analyzing module Signal_Combiner
 INFO: [VRFC 10-311] analyzing module BUF_w_NAND
-INFO: [VRFC 10-311] analyzing module RCA_4bit
-INFO: [VRFC 10-311] analyzing module Full_Adder
-INFO: [VRFC 10-311] analyzing module Majority
+INFO: [VRFC 10-311] analyzing module Half_Adder
 INFO: [VRFC 10-311] analyzing module AND_w_NAND
+INFO: [VRFC 10-311] analyzing module AND3_w_NAND
+INFO: [VRFC 10-311] analyzing module AND4_w_NAND
+INFO: [VRFC 10-311] analyzing module AND5_w_NAND
 INFO: [VRFC 10-311] analyzing module OR_w_NAND
+INFO: [VRFC 10-311] analyzing module OR3_w_NAND
+INFO: [VRFC 10-311] analyzing module OR4_w_NAND
+INFO: [VRFC 10-311] analyzing module OR5_w_NAND
 INFO: [VRFC 10-311] analyzing module XOR_w_NAND
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/sweri/Desktop/HD/roger/Lab2/a4_Multiplier_4bit_t.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Multiplier_4bit_t
