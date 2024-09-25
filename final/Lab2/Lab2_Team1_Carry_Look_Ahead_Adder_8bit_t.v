@@ -1,3 +1,4 @@
+`include "Lab2_Team1_Carry_Look_Ahead_Adder_8bit.v"
 `timescale 1ns/1ps
 
 module Carry_Look_Ahead_Adder_8bit_t();
