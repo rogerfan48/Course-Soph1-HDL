@@ -1,4 +1,3 @@
-`include "Lab2_Team1_Multiplier_4bit.v"
 `timescale 1ns/1ps
 
 module Multiplier_4bit_t();

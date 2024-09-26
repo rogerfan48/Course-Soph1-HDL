@@ -1,14 +1,17 @@
-`include "Lab2_Team1_Decode_And_Execute.v"
 `timescale 1ns/1ps
 
 module Decode_And_Execute_t();
-    reg [3:0] rs = 4'b0, rt = 4'b0;
-    wire [3:0] rd;
+    reg [3:0] rs = 4'b0;
+    reg [3:0] rt = 4'b0;
     reg [2:0] sel = 3'b000;
-    wire error;
+    wire [3:0] rd;
+
     reg [3:0] test;
+    wire error;
+
     Decode_And_Execute G1(rs, rt, sel, rd);
     assign error = !(rd == test);
+
     initial begin
         //SUB
         repeat(2**4)begin

@@ -1,13 +1,17 @@
 `timescale 1ns/1ps
 
 module Decode_And_Execute_t();
-    reg unsigned [3:0] rs = 4'b0, rt = 4'b0;
-    wire unsigned [3:0] rd;
+    reg [3:0] rs = 4'b0;
+    reg [3:0] rt = 4'b0;
     reg [2:0] sel = 3'b000;
+    wire [3:0] rd;
+
+    reg [3:0] test;
     wire error;
-    reg unsigned [3:0] test;
+
     Decode_And_Execute G1(rs, rt, sel, rd);
     assign error = !(rd == test);
+
     initial begin
         //SUB
         repeat(2**4)begin
@@ -122,5 +126,3 @@ module Decode_And_Execute_t();
         $finish;
     end
 endmodule
-
-

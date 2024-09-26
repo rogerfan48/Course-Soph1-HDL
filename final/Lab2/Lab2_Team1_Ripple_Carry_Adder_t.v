@@ -1,4 +1,3 @@
-`include "Lab2_Team1_Ripple_Carry_Adder.v"
 `timescale 1ns/1ps
 
 module Ripple_Carry_Adder_t();
