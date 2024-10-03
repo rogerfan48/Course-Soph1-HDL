@@ -14,7 +14,7 @@ module Mealy (clk, rst_n, in, out, state);
     parameter S5 = 3'b101;
 
     reg [2:0] state;
-    reg [2:0] nextstate;
+    reg [2:0] nextstate = S0;
     reg [1:0] out;
     
     always @(posedge clk) begin
