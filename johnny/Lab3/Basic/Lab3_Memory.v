@@ -10,9 +10,9 @@ module Memory (clk, ren, wen, addr, din, dout);
     reg [7:0] dout;
 
     reg [7:0] MEM[127:0];
-    always @(negedge clk) begin
-        if(ren && wen) dout <= MEM[addr]?MEM[addr]:0;  
-        else if(ren) dout <= MEM[addr]?MEM[addr]:0;  
+    always @(posedge clk) begin
+        if(ren && wen) dout <= MEM[addr];  
+        else if(ren) dout <= MEM[addr];  
         else if(wen) begin
             MEM[addr] <= din; 
             dout <= 0;
