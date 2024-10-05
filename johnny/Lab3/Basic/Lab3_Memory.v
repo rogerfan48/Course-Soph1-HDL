@@ -8,15 +8,15 @@ module Memory (clk, ren, wen, addr, din, dout);
     output [8-1:0] dout;
 
     reg [7:0] dout;
+    reg [7:0] dotcar;
 
     reg [7:0] MEM[127:0];
-    always @(posedge clk) begin
-        if(ren && wen) dout <= MEM[addr];  
-        else if(ren) dout <= MEM[addr];  
+    always @(negedge clk) begin
+        if(ren) dout <= MEM[addr];  
         else if(wen) begin
             MEM[addr] <= din; 
-            dout <= 0;
+            dout <= dotcar;
         end
-        else dout <= 0;
+        else dout <= dotcar;
     end
 endmodule

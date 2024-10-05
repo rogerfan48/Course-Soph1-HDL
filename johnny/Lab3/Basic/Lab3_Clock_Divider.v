@@ -29,7 +29,7 @@ module div_2(out, clk, rst_n);
     output out;
     reg out;
     reg cnt = 1'b0;
-    always @(posedge clk or negedge rst_n) begin
+    always @(posedge clk) begin
         if(!rst_n) cnt <= 1;
         else if(cnt == 1) cnt <= 0;
         else cnt <= cnt+1;
@@ -46,7 +46,7 @@ module div_3(out, clk, rst_n);
     output out;
     reg out;
     reg [1:0] cnt = 0;
-    always @(posedge clk or negedge rst_n) begin
+    always @(posedge clk) begin
         if(!rst_n) cnt <= 1;
         else if(cnt == 2) cnt <= 0;
         else cnt <= cnt+1;
@@ -63,7 +63,7 @@ module div_4(out, clk, rst_n);
     output out;
     reg out;
     reg [1:0] cnt = 0;
-    always @(posedge clk or negedge rst_n) begin
+    always @(posedge clk) begin
         if(!rst_n) cnt <= 1;
         else if(cnt == 3) cnt <= 0;
         else cnt <= cnt+1;
@@ -80,7 +80,7 @@ module div_8(out, clk, rst_n);
     output out;
     reg out;
     reg [2:0] cnt = 0;
-    always @(posedge clk or negedge rst_n) begin
+    always @(posedge clk) begin
         if(!rst_n) cnt <= 1;
         else if(cnt == 7) cnt <= 0;
         else cnt <= cnt+1;
@@ -91,3 +91,4 @@ module div_8(out, clk, rst_n);
         else out <= 0;
     end
 endmodule
+
