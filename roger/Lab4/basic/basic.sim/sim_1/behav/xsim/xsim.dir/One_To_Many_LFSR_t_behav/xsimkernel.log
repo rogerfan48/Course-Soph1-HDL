@@ -1,0 +1,4 @@
+Running: xsim.dir/One_To_Many_LFSR_t_behav/xsimk.exe -simmode gui -wdb One_To_Many_LFSR_t_behav.wdb -simrunnum 0 -socket 59979
+Design successfully loaded
+Design Loading Memory Usage: 8000 KB (Peak: 8000 KB)
+Design Loading CPU Usage: 0 ms
