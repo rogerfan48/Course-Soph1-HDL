@@ -17,14 +17,14 @@ parameter cyc = 10;
 always#(cyc/2)clk = !clk;
 
 Clock_Divider cd (
-	.clk (clk),
-	.rst_n (rst_n),
-  	.sel (sel),
-  	.clk1_2 (clk1_2),
-  	.clk1_4 (clk1_4),
-  	.clk1_8 (clk1_8),
-  	.clk1_3 (clk1_3),
-  	.dclk (dclk)
+    .clk (clk),
+    .rst_n (rst_n),
+    .sel (sel),
+    .clk1_2 (clk1_2),
+    .clk1_4 (clk1_4),
+    .clk1_8 (clk1_8),
+    .clk1_3 (clk1_3),
+    .dclk (dclk)
 );
 
 // uncommment and add "+access+r" to your nverilog command to dump fsdb waveform on NTHUCAD
@@ -34,15 +34,15 @@ Clock_Divider cd (
 // end
 
 initial begin
-	@ (negedge clk)
-	rst_n = 1'b0;
-	@ (negedge clk)
-	rst_n = 1'b1;
-	@ (negedge clk)
-	repeat (2 ** 2) begin
-	#(cyc * 5) sel = sel + 1'b1;
-	end
-	#1 $finish;
+    @ (negedge clk)
+    rst_n = 1'b0;
+    @ (negedge clk)
+    rst_n = 1'b1;
+    @ (negedge clk)
+    repeat (2 ** 2) begin
+    #(cyc * 5) sel = sel + 1'b1;
+    end
+    #1 $finish;
 end
 
 endmodule
