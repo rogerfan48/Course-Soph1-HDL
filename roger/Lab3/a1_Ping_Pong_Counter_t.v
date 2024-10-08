@@ -26,5 +26,6 @@ module Ping_Pong_Counter_t;
             #(cyc*2) enable = 1'b0;
             #(cyc*2) enable = 1'b1;
         end
+        $finish;
     end
 endmodule

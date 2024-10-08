@@ -1,7 +1,7 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
-"../../../../../a1_Ping_Pong_Counter.v" \
-"../../../../../a1_Ping_Pong_Counter_t.v" \
+"../../../../../a3_Multi_Bank_Memory.v" \
+"../../../../../a3_Multi_Bank_Memory_t.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"
