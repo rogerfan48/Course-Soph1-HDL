@@ -12,7 +12,7 @@ module Multi_Bank_Memory_t();
     always #5 clk = !clk;
 
     initial begin
-        $dumpfile("Multi_Bank_Memory_t.vcd");
+        $dumpfile("a3_Multi_Bank_Memory_t.vcd");
         $dumpvars(0, Multi_Bank_Memory_t);
     end
 
