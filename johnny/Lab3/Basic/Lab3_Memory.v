@@ -11,7 +11,7 @@ module Memory (clk, ren, wen, addr, din, dout);
     reg [7:0] dotcar;
 
     reg [7:0] MEM[127:0];
-    always @(negedge clk) begin
+    always @(posedge clk) begin
         if(ren) dout <= MEM[addr];  
         else if(wen) begin
             MEM[addr] <= din; 
