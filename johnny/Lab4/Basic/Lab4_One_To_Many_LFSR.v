@@ -7,7 +7,7 @@ output reg [8-1:0] out;
 
     parameter S0 = 8'b10111101;
 
-    always @(negedge clk) begin
+    always @(posedge clk) begin
         if(!rst_n) out <= S0;
         else begin
             out[7] <= out[6];

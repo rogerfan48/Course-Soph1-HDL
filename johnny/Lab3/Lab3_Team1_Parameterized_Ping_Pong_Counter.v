@@ -1,8 +1,6 @@
-`timescale 1ns/1ps
-
 module Parameterized_Ping_Pong_Counter (clk, rst_n, enable, flip, max, min, direction, out);
-    input clk, rst_n;
-    input enable;
+    input clk = 0, rst_n = 0;
+    input enable = 0;
     input flip;
     input [4-1:0] max;
     input [4-1:0] min;
@@ -15,7 +13,8 @@ module Parameterized_Ping_Pong_Counter (clk, rst_n, enable, flip, max, min, dire
             direction <= 1'b1;
         end
         else if(enable == 1) begin //case 1
-            if(out < max && out > min) begin //case 1-1
+            if(min > max) out <= out;
+            else if(out < max && out > min) begin //case 1-1
                 if(direction == 1) begin
                     if(flip == 1) begin
                         direction <= !direction;

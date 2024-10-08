@@ -12,7 +12,7 @@ module FIFO_8(clk, rst_n, wen, ren, din, dout, error);
     reg [3:0] COUNTER = 0; 
     reg [3:0] Waddr = 0, Raddr = 0;
     reg [8-1:0] dout;
-    reg [8-1:0] dotcar;;
+    reg [8-1:0] dotcar;
     reg error;
 
     always @(posedge clk) begin
