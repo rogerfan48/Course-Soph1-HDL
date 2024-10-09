@@ -16,24 +16,27 @@ module Ping_Pong_Counter (clk, rst_n, enable, direction, out);
         else begin
             if(!enable) begin
                 out <= out;
+                direction <= direction;
             end
             else begin
                 if(direction == 1) begin
                     if(out == 15) begin
                         out <= out-1;
-                        direction = 0;
+                        direction <= 0;
                     end
                     else begin
                         out <= out+1;
+                        direction <= direction;
                     end
                 end
                 else begin
                     if(out == 0) begin
                         out <= out+1;
-                        direction = 1;
+                        direction <= 1;
                     end
                     else begin
                         out <= out-1;
+                        direction <= direction;
                     end
                 end
             end
