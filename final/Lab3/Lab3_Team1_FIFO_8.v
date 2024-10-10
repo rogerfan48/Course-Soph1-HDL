@@ -9,7 +9,7 @@ module FIFO_8(clk, rst_n, wen, ren, din, dout, error);
     output error;
 
     reg [7:0] MEM[7:0];
-    reg [3:0] COUNTER = 0; 
+    reg [3:0] cnt = 0; 
     reg [2:0] Waddr = 0, Raddr = 0;
     reg [8-1:0] dout;
     reg [8-1:0] dotcar;
@@ -25,30 +25,30 @@ module FIFO_8(clk, rst_n, wen, ren, din, dout, error);
             MEM[5] <= 0;
             MEM[6] <= 0;
             MEM[7] <= 0;
-            COUNTER <= 0;
+            cnt <= 0;
             Waddr <= 0;
             Raddr <= 0;
             dout <= 0;
         end
         else begin
             if (ren == 1) begin
-                if(COUNTER == 0) begin
+                if(cnt == 0) begin
                     dout <= dotcar;
                     Raddr <= Raddr;
-                    COUNTER <= COUNTER;
+                    cnt <= cnt;
                     Waddr <= Waddr;
                 end
                 else begin
                     dout <= MEM[Raddr];
                     Raddr <= Raddr + 1;
-                    COUNTER <= COUNTER - 1;
+                    cnt <= cnt - 1;
                     Waddr <= Waddr;
                 end
             end
             else if (wen == 1) begin
-                if(COUNTER == 8) begin
+                if(cnt == 8) begin
                     dout <= dotcar;
-                    COUNTER <= COUNTER;
+                    cnt <= cnt;
                     Raddr <= Raddr;
                     Waddr <= Waddr;
                 end
@@ -57,18 +57,18 @@ module FIFO_8(clk, rst_n, wen, ren, din, dout, error);
                     MEM[Waddr] <= din;
                     Waddr <= Waddr + 1;
                     Raddr <= Raddr;
-                    COUNTER <= COUNTER + 1;
+                    cnt <= cnt + 1;
                 end
             end
             else begin
                 dout <= dotcar;
-                COUNTER <= COUNTER;
+                cnt <= cnt;
                 Waddr <= Waddr;
                 Raddr <= Raddr;
             end
         end
     end    
     always @(posedge clk) begin
-        error <= (rst_n && ((COUNTER==0 && ren==1) || (COUNTER==8 && wen==1 && ren==0)));
+        error <= (rst_n && ((cnt==0 && ren==1) || (cnt==8 && wen==1 && ren==0)));
     end
 endmodule
