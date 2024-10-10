@@ -55,10 +55,7 @@ module Memory_Unit (clk, ren, wen, waddr, raddr, din, dout);
 
     always @(posedge clk) begin
         if (ren)        dout <= MEM[raddr];
-        else if (wen) begin
-            MEM[waddr] <= din;
-            dout <= 8'b0;
-        end
-        else dout <= 8'b0;
+        else            dout <= 8'b0;
+        if (wen && !ren) MEM[waddr] <= din;
     end
 endmodule

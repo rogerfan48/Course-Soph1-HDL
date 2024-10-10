@@ -59,7 +59,7 @@ module Round_Robin_FIFO_Arbiter_t ();
         rst_n = !rst_n;
     end
     initial begin
-        $dumpfile("a4_Round_Robin_FIFO_Arbiter_t.vcd");
+        $dumpfile("a4.vcd");
         $dumpvars(0, Round_Robin_FIFO_Arbiter_t);
     end
 endmodule

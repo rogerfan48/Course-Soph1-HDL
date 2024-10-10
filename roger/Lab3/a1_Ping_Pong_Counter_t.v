@@ -1,3 +1,4 @@
+`include "a1_Ping_Pong_Counter.v"
 `timescale 1ns/1ps
 
 module Ping_Pong_Counter_t;
@@ -27,5 +28,10 @@ module Ping_Pong_Counter_t;
             #(cyc*2) enable = 1'b1;
         end
         $finish;
+    end
+
+    initial begin
+        $dumpfile("a1.vcd");
+        $dumpvars(0, Ping_Pong_Counter_t);
     end
 endmodule

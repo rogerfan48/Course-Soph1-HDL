@@ -11,17 +11,17 @@ module Ping_Pong_Counter (clk, rst_n, enable, direction, out);
 
     always @(posedge clk) begin
         if (!rst_n) begin
-            out = 4'b0000;
-            direction = 1'b1;
+            out <= 4'b0000;
+            direction <= 1'b1;
         end else if (enable) begin
             if (out == 4'b0000) begin
-                out = out + 1;
-                direction = 1'b1;
+                out <= out + 1;
+                direction <= 1'b1;
             end else if (out == 4'b1111) begin
-                out = out - 1;
-                direction = 1'b0;
-            end else if (direction) out = out + 1;
-            else out = out - 1;
+                out <= out - 1;
+                direction <= 1'b0;
+            end else if (direction) out <= out + 1;
+            else out <= out - 1;
         end
     end
 endmodule

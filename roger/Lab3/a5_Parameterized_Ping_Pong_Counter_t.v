@@ -73,7 +73,7 @@ module Parameterized_Ping_Pong_Counter_t();
     end
 
     initial begin
-        $dumpfile("a5_Parameterized_Ping_Pong_Counter_t.vcd");
+        $dumpfile("a5.vcd");
         $dumpvars(0, Parameterized_Ping_Pong_Counter_t);
     end
 endmodule
