@@ -28,7 +28,7 @@ module Parameterized_Ping_Pong_Counter_fpga(clk, rst_n, enable, flip, max, min, 
 
     always @(posedge clk) begin
         if(timer_counter == 17'b11111111111111111) timer <= !timer;
-        if(timer2_counter == 24'b111111111111111111111111) timer2 <= !timer2;
+        if(timer2_counter == 26'b111111111111111111111111) timer2 <= !timer2;
         timer_counter <= timer_counter+1;
         timer2_counter <= timer2_counter+1;
     end
@@ -101,12 +101,12 @@ module debounce (pbd, clk, pb);
 
     input clk, pb;
     output pbd;
-    reg [3:0] DFF;
+    reg [9:0] DFF;
 
-    assign pbd = (DFF == 4'b1111) ? 1'b1 : 1'b0 ;
+    assign pbd = (DFF == 10'b1111111111) ? 1'b1 : 1'b0 ;
 
     always @(posedge clk) begin
-        DFF[3:1] <= DFF[2:0];
+        DFF[9:1] <= DFF[8:0];
         DFF[0] <= pb;
     end
 
