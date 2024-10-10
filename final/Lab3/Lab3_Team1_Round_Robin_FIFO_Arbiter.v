@@ -12,17 +12,17 @@ module Round_Robin_FIFO_Arbiter(clk, rst_n, wen, a, b, c, d, dout, valid);
     wire [4-1:0] error;
     reg [2-1:0] cnt;
     reg [2-1:0] cnt_delay;
-    reg r_rst_n;
+    reg rst_n_c;
 
     FIFO_8 queue_a (clk, rst_n, wen[0], cnt[1:0]==2'd0, a, out[0], error[0]);
     FIFO_8 queue_b (clk, rst_n, wen[1], cnt[1:0]==2'd1, b, out[1], error[1]);
     FIFO_8 queue_c (clk, rst_n, wen[2], cnt[1:0]==2'd2, c, out[2], error[2]);
     FIFO_8 queue_d (clk, rst_n, wen[3], cnt[1:0]==2'd3, d, out[3], error[3]);
 
-    assign valid = (r_rst_n) ? !(|error) : 1'b0;
-    assign dout = (r_rst_n && valid) ? out[cnt_delay[1:0]] : 8'b0;
+    assign valid = (rst_n_c) ? !(|error) : 1'b0;
+    assign dout = (valid) ? out[cnt_delay[1:0]] : 8'b0;
 
-    always @(posedge clk) r_rst_n <= rst_n;
+    always @(posedge clk) rst_n_c <= rst_n;
     always @(posedge clk) cnt_delay <= cnt;
     always @(posedge clk) begin
         if (!rst_n) cnt <= 2'b0;

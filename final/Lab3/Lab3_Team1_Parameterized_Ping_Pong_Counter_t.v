@@ -1,4 +1,3 @@
-`include "Lab3_Team1_Parameterized_Ping_Pong_Counter.v"
 `timescale 1ns/1ps
 
 module Parameterized_Ping_Pong_Counter_t();
@@ -78,10 +77,5 @@ module Parameterized_Ping_Pong_Counter_t();
 
     initial begin
         #690 $finish;
-    end
-
-    initial begin
-        $dumpfile("Parameterized_Ping_Pong_Counter_t.vcd");
-        $dumpvars(0, Parameterized_Ping_Pong_Counter_t);
     end
 endmodule
