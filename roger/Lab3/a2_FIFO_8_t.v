@@ -1,3 +1,4 @@
+`include "a2_FIFO_8.v"
 `timescale 1ns/1ps
 
 module FIFO_8_t;
@@ -33,5 +34,10 @@ module FIFO_8_t;
         ren = 1'b0;
         @(negedge clk) din = 8'd77;
         @(negedge clk) $finish;
+    end
+
+    initial begin
+        $dumpfile("a2.vcd");
+        $dumpvars(0, FIFO_8_t);
     end
 endmodule
