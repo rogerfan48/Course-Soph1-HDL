@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "a5_FPGA_behav" "xil_defaultlib.a5_FPGA" "xil_defaultlib.glbl" -log "elaborate.log" 

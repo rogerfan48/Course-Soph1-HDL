@@ -1,7 +1,6 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
-"../../../../../a3_Multi_Bank_Memory.v" \
-"../../../../../a3_Multi_Bank_Memory_t.v" \
+"../../../../../a5_FPGA.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

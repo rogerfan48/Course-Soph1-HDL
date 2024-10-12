@@ -1,6 +1,3 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/sweri/Desktop/HD/roger/Lab3/a3_Multi_Bank_Memory.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Multi_Bank_Memory
-INFO: [VRFC 10-311] analyzing module Memory_Bank
-INFO: [VRFC 10-311] analyzing module Memory_Unit
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/sweri/Desktop/HD/roger/Lab3/a3_Multi_Bank_Memory_t.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Multi_Bank_Memory_t
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/sweri/Desktop/HD/roger/Lab3/a5_FPGA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module a5_FPGA
+INFO: [VRFC 10-311] analyzing module Parameterized_Ping_Pong_Counter

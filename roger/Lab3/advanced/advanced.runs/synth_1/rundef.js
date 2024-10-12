@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log FIFO_8.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source FIFO_8.tcl" );
+         "-log a5_FPGA.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source a5_FPGA.tcl" );
 
 
 

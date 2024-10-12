@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log FIFO_8.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source FIFO_8.tcl
+EAStep vivado -log a5_FPGA.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source a5_FPGA.tcl

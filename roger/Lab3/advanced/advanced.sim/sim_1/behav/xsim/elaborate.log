@@ -1,28 +1,15 @@
 Vivado Simulator v2022.2
 Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Multi_Bank_Memory_t_behav xil_defaultlib.Multi_Bank_Memory_t xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot a5_FPGA_behav xil_defaultlib.a5_FPGA xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'dout' [C:/Users/sweri/Desktop/HD/roger/Lab3/a3_Multi_Bank_Memory.v:14]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'dout' [C:/Users/sweri/Desktop/HD/roger/Lab3/a3_Multi_Bank_Memory.v:33]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'dout' [C:/Users/sweri/Desktop/HD/roger/Lab3/a3_Multi_Bank_Memory.v:15]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'dout' [C:/Users/sweri/Desktop/HD/roger/Lab3/a3_Multi_Bank_Memory.v:16]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'dout' [C:/Users/sweri/Desktop/HD/roger/Lab3/a3_Multi_Bank_Memory.v:17]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'dout' [C:/Users/sweri/Desktop/HD/roger/Lab3/a3_Multi_Bank_Memory.v:34]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'dout' [C:/Users/sweri/Desktop/HD/roger/Lab3/a3_Multi_Bank_Memory.v:35]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 8 for port 'dout' [C:/Users/sweri/Desktop/HD/roger/Lab3/a3_Multi_Bank_Memory.v:36]
-WARNING: [VRFC 10-3705] select index 2 into 'out' is out of bounds [C:/Users/sweri/Desktop/HD/roger/Lab3/a3_Multi_Bank_Memory.v:16]
-WARNING: [VRFC 10-3705] select index 3 into 'out' is out of bounds [C:/Users/sweri/Desktop/HD/roger/Lab3/a3_Multi_Bank_Memory.v:17]
-WARNING: [VRFC 10-3705] select index 2 into 'out' is out of bounds [C:/Users/sweri/Desktop/HD/roger/Lab3/a3_Multi_Bank_Memory.v:35]
-WARNING: [VRFC 10-3705] select index 3 into 'out' is out of bounds [C:/Users/sweri/Desktop/HD/roger/Lab3/a3_Multi_Bank_Memory.v:36]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'out' [C:/Users/sweri/Desktop/HD/roger/Lab3/a5_FPGA.v:18]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.Memory_Unit
-Compiling module xil_defaultlib.Memory_Bank
-Compiling module xil_defaultlib.Multi_Bank_Memory
-Compiling module xil_defaultlib.Multi_Bank_Memory_t
+Compiling module xil_defaultlib.Parameterized_Ping_Pong_Counter
+Compiling module xil_defaultlib.a5_FPGA
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot Multi_Bank_Memory_t_behav
+Built simulation snapshot a5_FPGA_behav
