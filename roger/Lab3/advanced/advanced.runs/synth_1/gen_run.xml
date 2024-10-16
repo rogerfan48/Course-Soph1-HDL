@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1728719987" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Ping_Pong_Counter.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1728826018" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Ping_Pong_Counter.dcp">
   <File Type="PA-TCL" Name="a5_FPGA.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="a5_FPGA_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="a5_FPGA_reports.tcl"/>

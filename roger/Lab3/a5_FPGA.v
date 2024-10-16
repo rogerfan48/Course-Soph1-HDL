@@ -1,11 +1,11 @@
 `timescale 1ns/1ps
 
-module a5_FPGA(clk_100Mhz, reset, flip, enable, max, min, AN, LED_seg);
+module a5_FPGA(clk_100Mhz, reset, flip, enable, max, min, AN, seg);
     input clk_100Mhz;                   // 100 Mhz clock source -> W5
     input reset, flip, enable;
     input [4-1:0] max, min;
-    output reg [4-1:0] AN = 4'b1110;    // anode enable
-    output reg [7-1:0] LED_seg;         // LED segments
+    output reg [4-1:0] AN;              // anode enable
+    output reg [7-1:0] seg;             // LED segments
     wire direction;
     wire [4-1:0] num;
 
@@ -15,11 +15,11 @@ module a5_FPGA(clk_100Mhz, reset, flip, enable, max, min, AN, LED_seg);
     reg clk_LED;
     reg [4-1:0] LED_BCD;
 
-    wire reset_, reset__, flip_, flip__;
-    debounce DB1(clk_100Mhz, reset, reset_);
-    one_pulse OP1(clk_100Mhz, reset_, reset__);
-    debounce DB2(clk_100Mhz, flip, flip_);
-    one_pulse OP2(clk_100Mhz, flip_, flip__);
+    wire reset_d, reset_1p, flip_d, flip_1p;
+    debounce DB1(clk_100Mhz, reset, reset_d);
+    one_pulse OP1(clk_100Mhz, reset_d, reset_1p);
+    debounce DB2(clk_100Mhz, flip, flip_d);
+    one_pulse OP2(clk_100Mhz, flip_d, flip_1p);
 
     reg reset_last, flip_last;
     reg reset_update, flip_update;
@@ -28,47 +28,54 @@ module a5_FPGA(clk_100Mhz, reset, flip, enable, max, min, AN, LED_seg);
         flip_last <= flip_update;
     end
     always @(posedge clk_100Mhz) begin
-        reset_update <= (reset_update ^ reset_last) ? reset_update : reset__;
-        flip_update <= (flip_update ^ flip_last) ? flip_update : flip__;
+        reset_update <= (reset_update ^ reset_last) ? reset_update : reset_1p;
+        flip_update <= (flip_update ^ flip_last) ? flip_update : flip_1p;
     end
 
     Parameterized_Ping_Pong_Counter PPPC(clk, !reset_update, enable, flip_update, max, min, direction, num);
 
-    always @(posedge clk_100Mhz or posedge reset) begin
-        if (reset)                      begin cnt_halfSec <= 0; clk <= 1;       end
-        else if (cnt_halfSec>=49999999) begin cnt_halfSec <= 0; clk <= !clk;    end
-        else                            begin cnt_halfSec <= cnt_halfSec + 1;   end
+    // generate clk:
+    always @(posedge clk_100Mhz or posedge reset_1p) begin
+        if (reset_1p)                   begin cnt_halfSec <= 0'b0; clk <= 1'b1;     end
+        else if (cnt_halfSec>=26'd49999999) begin cnt_halfSec <= 0'b0; clk <= !clk;     end
+        else                            begin cnt_halfSec <= cnt_halfSec + 1'b1;    end
     end 
-
+    // generate clk_LED:
     always @(posedge clk_100Mhz) begin
-        if (cnt_LED>=49999)        begin cnt_LED <= 0; clk_LED <= !clk_LED;    end
-        else                       begin cnt_LED <= cnt_LED + 1;               end
+        if (cnt_LED>=16'd49999)        begin cnt_LED <= 1'b0; clk_LED <= !clk_LED;    end
+        else                       begin cnt_LED <= cnt_LED + 1'b1;               end
     end
-    always @(posedge clk_LED) AN[3:0] <= {AN[2:0], AN[3]};
+    always @(posedge clk_LED or posedge reset_1p) begin
+        if (reset_1p)   AN[3:0] <= 4'b1110;
+        else            AN[3:0] <= {AN[2:0], AN[3]};
+    end
 
     always @(*) begin
         case(AN)
             4'b1110, 4'b1101: LED_BCD = (direction) ? 4'b1110 : 4'b1111;
-            4'b1011: LED_BCD = num % 10;
-            4'b0111: LED_BCD = num / 10;
+                // ! prevent to use "%" and "/":
+                // 4'b1011: LED_BCD = num % 4'd10;
+                // 4'b0111: LED_BCD = num / 4'd10;
+            4'b1011: LED_BCD = (num >= 4'd10) ? (num - 4'd10) : num;
+            4'b0111: LED_BCD = (num >= 4'd10) ? 1 : 0;
         endcase
     end
 
     always @(*) begin
         case(LED_BCD)
-            4'b0000: LED_seg = 7'b0000001; // "0"     
-            4'b0001: LED_seg = 7'b1001111; // "1" 
-            4'b0010: LED_seg = 7'b0010010; // "2" 
-            4'b0011: LED_seg = 7'b0000110; // "3" 
-            4'b0100: LED_seg = 7'b1001100; // "4" 
-            4'b0101: LED_seg = 7'b0100100; // "5" 
-            4'b0110: LED_seg = 7'b0100000; // "6" 
-            4'b0111: LED_seg = 7'b0001111; // "7" 
-            4'b1000: LED_seg = 7'b0000000; // "8"     
-            4'b1001: LED_seg = 7'b0000100; // "9" 
-            4'b1110: LED_seg = 7'b0011101; // "UP"
-            4'b1111: LED_seg = 7'b1100011; // "DOWN"
-            default: LED_seg = 7'b0000001; // "0"
+            4'b0000: seg = 7'b0000001; // "0"     
+            4'b0001: seg = 7'b1001111; // "1" 
+            4'b0010: seg = 7'b0010010; // "2" 
+            4'b0011: seg = 7'b0000110; // "3" 
+            4'b0100: seg = 7'b1001100; // "4" 
+            4'b0101: seg = 7'b0100100; // "5" 
+            4'b0110: seg = 7'b0100000; // "6" 
+            4'b0111: seg = 7'b0001111; // "7" 
+            4'b1000: seg = 7'b0000000; // "8"     
+            4'b1001: seg = 7'b0000100; // "9" 
+            4'b1110: seg = 7'b0011101; // "UP"
+            4'b1111: seg = 7'b1100011; // "DOWN"
+            default: seg = 7'b0000001; // "0"
         endcase
     end
 endmodule

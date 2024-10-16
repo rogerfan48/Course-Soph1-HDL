@@ -15,8 +15,6 @@ module Memory (clk, ren, wen, addr, din, dout);
         else if (wen) begin
             MEM[addr] <= din;
             dout <= 0;
-        end
-        else dout <= 0;
+        end else dout <= 0;
     end
-
 endmodule

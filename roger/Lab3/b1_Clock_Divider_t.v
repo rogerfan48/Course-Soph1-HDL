@@ -1,3 +1,4 @@
+`include "b1_Clock_Divider.v"
 `timescale 1ns/1ps
 
 module Clock_Divider_t;
@@ -43,6 +44,11 @@ initial begin
     #(cyc * 5) sel = sel + 1'b1;
     end
     #1 $finish;
+end
+
+initial begin
+    $dumpfile("b1.vcd");
+    $dumpvars(0, Clock_Divider_t);
 end
 
 endmodule

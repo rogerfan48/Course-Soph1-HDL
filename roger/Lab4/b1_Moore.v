@@ -18,7 +18,7 @@ module Moore (clk, rst_n, in, out, state);
     reg [1:0] out;
 
     always @(posedge clk) begin
-        if (rst_n == 0)     state <= S0;
+        if (rst_n == 1'b0)     state <= S0;
         else                state <= nextstate;
     end
 
@@ -47,12 +47,12 @@ module Moore (clk, rst_n, in, out, state);
 
     always @(*) begin
         case (state)
-            S0: out <= 3;
-            S1: out <= 1;
-            S2: out <= 3;
-            S3: out <= 2;
-            S4: out <= 2;
-            default: out <= 0;
+            S0:         out <= 2'b11;
+            S1:         out <= 2'b01;
+            S2:         out <= 2'b11;
+            S3:         out <= 2'b10;
+            S4:         out <= 2'b10;
+            default:    out <= 2'b00;
         endcase
     end
 

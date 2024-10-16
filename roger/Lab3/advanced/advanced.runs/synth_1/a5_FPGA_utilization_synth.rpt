@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Sat Oct 12 16:00:21 2024
+| Date         : Sun Oct 13 21:27:32 2024
 | Host         : RGWIN running 64-bit major release  (build 9200)
 | Command      : report_utilization -file a5_FPGA_utilization_synth.rpt -pb a5_FPGA_utilization_synth.pb
 | Design       : a5_FPGA
@@ -56,10 +56,10 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 1     |          Yes |           - |          Set |
-| 30    |          Yes |           - |        Reset |
+| 4     |          Yes |           - |          Set |
+| 31    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 42    |          Yes |       Reset |            - |
+| 38    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -151,9 +151,9 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |   42 |        Flop & Latch |
+| FDRE     |   38 |        Flop & Latch |
 | LUT3     |   33 |                 LUT |
-| FDCE     |   26 |        Flop & Latch |
+| FDCE     |   27 |        Flop & Latch |
 | LUT4     |   15 |                 LUT |
 | LUT5     |   12 |                 LUT |
 | IBUF     |   12 |                  IO |
@@ -161,9 +161,9 @@ Warning! LUT value is adjusted to account for LUT combining.
 | LUT6     |   11 |                 LUT |
 | CARRY4   |   11 |          CarryLogic |
 | LDCE     |    4 |        Flop & Latch |
+| FDPE     |    4 |        Flop & Latch |
 | LUT2     |    3 |                 LUT |
 | LUT1     |    1 |                 LUT |
-| FDPE     |    1 |        Flop & Latch |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 

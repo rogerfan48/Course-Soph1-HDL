@@ -19,7 +19,7 @@ module Round_Robin_FIFO_Arbiter(clk, rst_n, wen, a, b, c, d, dout, valid);
     FIFO_8 queue_c (clk, rst_n, wen[2], cnt[1:0]==2'd2, c, out[2], error[2]);
     FIFO_8 queue_d (clk, rst_n, wen[3], cnt[1:0]==2'd3, d, out[3], error[3]);
 
-    assign valid = (rst_n_c) ? !(|error) : 1'b0;
+    assign valid = (rst_n_c) ? !error[cnt_delay[1:0]] : 1'b0;
     assign dout = (valid) ? out[cnt_delay[1:0]] : 8'b0;
 
     always @(posedge clk) rst_n_c <= rst_n;
@@ -48,14 +48,14 @@ module FIFO_8(clk, rst_n, wen, ren, din, dout, error);
 
     always @(posedge clk) begin
         if (!rst_n) begin
-            MEM[0] <= 8'b0;
-            MEM[1] <= 8'b0;
-            MEM[2] <= 8'b0;
-            MEM[3] <= 8'b0;
-            MEM[4] <= 8'b0;
-            MEM[5] <= 8'b0;
-            MEM[6] <= 8'b0;
-            MEM[7] <= 8'b0;
+            // MEM[0] <= 8'b0;      // can be omitted
+            // MEM[1] <= 8'b0;
+            // MEM[2] <= 8'b0;
+            // MEM[3] <= 8'b0;
+            // MEM[4] <= 8'b0;
+            // MEM[5] <= 8'b0;
+            // MEM[6] <= 8'b0;
+            // MEM[7] <= 8'b0;
             R_ptr <= 3'b0;
             W_ptr <= 3'b0;
             cnt <= 3'b0;
