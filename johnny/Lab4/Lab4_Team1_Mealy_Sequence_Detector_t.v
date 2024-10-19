@@ -12,7 +12,7 @@ module Mealy_Sequence_Detector_t();
     always #5 clk = ~clk;
 
     initial begin
-        $dumpfile("Mealy_Sequence_Detector_t.vcd");
+        $dumpfile("Mealy_Sequence_Detector_t2.vcd");
         $dumpvars(0, Mealy_Sequence_Detector_t);
     end
 
