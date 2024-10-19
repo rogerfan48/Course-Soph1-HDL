@@ -1,0 +1,305 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Oct 17 14:55:00 2024
+# Process ID: 21288
+# Current directory: C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.runs/synth_1
+# Command line: vivado.exe -log Lab3_FPGA.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Lab3_FPGA.tcl
+# Log file: C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.runs/synth_1/Lab3_FPGA.vds
+# Journal file: C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.runs/synth_1\vivado.jou
+# Running On: RGWIN, OS: Windows, CPU Frequency: 2189 MHz, CPU Physical cores: 14, Host memory: 16849 MB
+#-----------------------------------------------------------
+source Lab3_FPGA.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/utils_1/imports/synth_1/Top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/utils_1/imports/synth_1/Top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top Lab3_FPGA -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 16324
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1203.980 ; gain = 408.180
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Lab3_FPGA' [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/ra5_fpga.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Clk_Gen_AN' [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/ra5_fpga.v:44]
+INFO: [Synth 8-6155] done synthesizing module 'Clk_Gen_AN' (0#1) [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/ra5_fpga.v:44]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/ra5_fpga.v:84]
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (0#1) [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/ra5_fpga.v:84]
+INFO: [Synth 8-6157] synthesizing module 'one_pulse' [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/ra5_fpga.v:93]
+INFO: [Synth 8-6155] done synthesizing module 'one_pulse' (0#1) [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/ra5_fpga.v:93]
+INFO: [Synth 8-6157] synthesizing module 'Parameterized_Ping_Pong_Counter' [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/ra5_fpga.v:102]
+INFO: [Synth 8-6157] synthesizing module 'Clk_Gen_PPPC' [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/ra5_fpga.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'Clk_Gen_PPPC' (0#1) [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/ra5_fpga.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'Parameterized_Ping_Pong_Counter' (0#1) [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/ra5_fpga.v:102]
+INFO: [Synth 8-6157] synthesizing module 'Decoder_seg' [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/ra5_fpga.v:65]
+INFO: [Synth 8-6155] done synthesizing module 'Decoder_seg' (0#1) [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/ra5_fpga.v:65]
+INFO: [Synth 8-6155] done synthesizing module 'Lab3_FPGA' (0#1) [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/ra5_fpga.v:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1294.027 ; gain = 498.227
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1294.027 ; gain = 498.227
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1294.027 ; gain = 498.227
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1294.027 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc]
+WARNING: [Vivado 12-584] No ports matched 'segs[6]'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segs[5]'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segs[4]'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segs[3]'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segs[2]'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segs[1]'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segs[0]'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'en'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'rst'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'rst'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'en'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:26]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:26]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segs[0]'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:28]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:28]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segs[1]'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:29]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:29]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segs[2]'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:30]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:30]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segs[3]'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:31]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:31]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segs[4]'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:32]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:32]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segs[5]'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:33]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:33]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'segs[6]'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:34]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'rst_n'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'rst_n'. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.srcs/constrs_1/new/cons.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Lab3_FPGA_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Lab3_FPGA_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1334.742 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1334.742 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1334.742 ; gain = 538.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1334.742 ; gain = 538.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1334.742 ; gain = 538.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1334.742 ; gain = 538.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    4 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   5 Input    7 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 2     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:14 . Memory (MB): peak = 1334.742 ; gain = 538.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:19 . Memory (MB): peak = 1334.742 ; gain = 538.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:19 . Memory (MB): peak = 1334.742 ; gain = 538.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:19 . Memory (MB): peak = 1334.742 ; gain = 538.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:22 . Memory (MB): peak = 1334.742 ; gain = 538.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:22 . Memory (MB): peak = 1334.742 ; gain = 538.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:22 . Memory (MB): peak = 1334.742 ; gain = 538.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:22 . Memory (MB): peak = 1334.742 ; gain = 538.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:22 . Memory (MB): peak = 1334.742 ; gain = 538.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:22 . Memory (MB): peak = 1334.742 ; gain = 538.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    12|
+|3     |LUT1   |     2|
+|4     |LUT2   |     8|
+|5     |LUT3   |     4|
+|6     |LUT4   |    11|
+|7     |LUT5   |     3|
+|8     |LUT6   |    23|
+|9     |FDRE   |    56|
+|10    |IBUF   |    12|
+|11    |OBUF   |    11|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:22 . Memory (MB): peak = 1334.742 ; gain = 538.941
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:21 . Memory (MB): peak = 1334.742 ; gain = 498.227
+Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:23 . Memory (MB): peak = 1334.742 ; gain = 538.941
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1334.742 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 12 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1335.715 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: a72fe56d
+INFO: [Common 17-83] Releasing license: Synthesis
+37 Infos, 21 Warnings, 20 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:27 . Memory (MB): peak = 1335.715 ; gain = 917.059
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint 'C:/Users/sweri/Desktop/HD/roger/REWRITE/LAB3/FPGA/FPGA.runs/synth_1/Lab3_FPGA.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Lab3_FPGA_utilization_synth.rpt -pb Lab3_FPGA_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 17 14:55:33 2024...

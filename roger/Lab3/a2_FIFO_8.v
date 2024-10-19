@@ -18,14 +18,14 @@ module FIFO_8(clk, rst_n, wen, ren, din, dout, error);
 
     always @(posedge clk) begin
         if (!rst_n) begin
-            // MEM[0] <= 8'b0;      // can be omitted
-            // MEM[1] <= 8'b0;
-            // MEM[2] <= 8'b0;
-            // MEM[3] <= 8'b0;
-            // MEM[4] <= 8'b0;
-            // MEM[5] <= 8'b0;
-            // MEM[6] <= 8'b0;
-            // MEM[7] <= 8'b0;
+            MEM[0] <= 8'b0;
+            MEM[1] <= 8'b0;
+            MEM[2] <= 8'b0;
+            MEM[3] <= 8'b0;
+            MEM[4] <= 8'b0;
+            MEM[5] <= 8'b0;
+            MEM[6] <= 8'b0;
+            MEM[7] <= 8'b0;
             R_ptr <= 3'b0;
             W_ptr <= 3'b0;
             cnt <= 3'b0;
