@@ -11,23 +11,22 @@ module Content_Addressable_Memory(clk, wen, ren, din, addr, dout, hit);
     reg [8-1:0] CAM [16-1:0];
     wire [16-1:0] match;
 
-    assign match[0] = (CAM[0] == din);
-    assign match[1] = (CAM[1] == din);
-    assign match[2] = (CAM[2] == din);
-    assign match[3] = (CAM[3] == din);
-    assign match[4] = (CAM[4] == din);
-    assign match[5] = (CAM[5] == din);
-    assign match[6] = (CAM[6] == din);
-    assign match[7] = (CAM[7] == din);
-    assign match[8] = (CAM[8] == din);
-    assign match[9] = (CAM[9] == din);
-    assign match[10] = (CAM[10] == din);
-    assign match[11] = (CAM[11] == din);
-    assign match[12] = (CAM[12] == din);
-    assign match[13] = (CAM[13] == din);
-    assign match[14] = (CAM[14] == din);
-    assign match[15] = (CAM[15] == din);
-
+    assign match[0] = (CAM[0] === din);
+    assign match[1] = (CAM[1] === din);
+    assign match[2] = (CAM[2] === din);
+    assign match[3] = (CAM[3] === din);
+    assign match[4] = (CAM[4] === din);
+    assign match[5] = (CAM[5] === din);
+    assign match[6] = (CAM[6] === din);
+    assign match[7] = (CAM[7] === din);
+    assign match[8] = (CAM[8] === din);
+    assign match[9] = (CAM[9] === din);
+    assign match[10] = (CAM[10] === din);
+    assign match[11] = (CAM[11] === din);
+    assign match[12] = (CAM[12] === din);
+    assign match[13] = (CAM[13] === din);
+    assign match[14] = (CAM[14] === din);
+    assign match[15] = (CAM[15] === din);
 
     always @(posedge clk) begin
         if (ren) begin

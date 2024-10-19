@@ -16,9 +16,9 @@ module Scan_Chain_Design(clk, rst_n, scan_in, scan_en, scan_out);
     Scan_DFF a1 (clk, rst_n, scan_en, a_out[2], p[5], a_out[1]);
     Scan_DFF a0 (clk, rst_n, scan_en, a_out[1], p[4], a_out[0]);
     Scan_DFF b3 (clk, rst_n, scan_en, a_out[0], p[3], b_out[3]);
-    Scan_DFF b2 (clk, rst_n, scan_en, a_out[0], p[2], b_out[2]);
-    Scan_DFF b1 (clk, rst_n, scan_en, a_out[0], p[1], b_out[1]);
-    Scan_DFF b0 (clk, rst_n, scan_en, a_out[0], p[0], b_out[0]);
+    Scan_DFF b2 (clk, rst_n, scan_en, b_out[3], p[2], b_out[2]);
+    Scan_DFF b1 (clk, rst_n, scan_en, b_out[2], p[1], b_out[1]);
+    Scan_DFF b0 (clk, rst_n, scan_en, b_out[1], p[0], b_out[0]);
 
     assign p = a_out * b_out;
     assign scan_out = b_out[0];
