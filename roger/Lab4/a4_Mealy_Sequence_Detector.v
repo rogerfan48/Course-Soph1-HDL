@@ -10,12 +10,12 @@ module Mealy_Sequence_Detector (clk, rst_n, in, dec);
     reg [3-1:0] MEM;
     reg [2-1:0] cnt;
 
-    assign dec = ((num==4'b0111)||(num==4'b1001)||(num==4'b1110));
+    assign dec = ((cnt==2'd3)&&((num==4'b0111)||(num==4'b1001)||(num==4'b1110)));
 
     always @(posedge clk) begin
-        if (!rst_n || cnt==2'd0) begin
+        if (!rst_n || cnt==2'd3) begin
             MEM <= 3'b0;
-            cnt <= 2'd1;
+            cnt <= 2'd0;
         end else begin
             MEM[2:0] <= {MEM[1:0], in};
             cnt <= cnt + 1'b1;
