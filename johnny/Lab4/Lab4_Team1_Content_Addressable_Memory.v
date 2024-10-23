@@ -56,7 +56,7 @@ module Content_Addressable_Memory(clk, wen, ren, din, addr, dout, hit);
                 tempout = 4'd14;
             end else begin
                 if(out[13] == din) begin
-                    tempout = 4'd14;
+                    tempout = 4'd13;
                 end else begin
                     if(out[12] == din) begin
                         tempout = 4'd12;

@@ -7,7 +7,7 @@ module Many_To_One_LFSR(clk, rst_n, out);
 
     parameter S0 = 8'b10111101;
 
-    always @(negedge clk) begin
+    always @(posedge clk) begin
         if(!rst_n) out <= S0;
         else begin
             out[7] <= out[6];

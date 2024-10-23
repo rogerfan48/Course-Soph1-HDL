@@ -1,3 +1,4 @@
+`include "Lab4_One_To_Many_LFSR.v"
 `timescale 1ns/1ps
 
 module One_To_Many_LFSR_t;
@@ -17,11 +18,10 @@ One_TO_Many_LFSR one2mlfsr(
     .out(out)
 );
 
-// uncommment and add "+access+r" to your nverilog command to dump fsdb waveform on NTHUCAD
-// initial begin
-//     $fsdbDumpfile("One_To_Many_LFSR.fsdb");
-//     $fsdbDumpvars;
-// end
+initial begin
+    $dumpfile("One_To_Many_LFSR_t.vcd");
+    $dumpvars(0, One_To_Many_LFSR_t);
+end
 
 initial begin
     @(negedge clk)
