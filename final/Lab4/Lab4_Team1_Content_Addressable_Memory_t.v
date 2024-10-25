@@ -1,4 +1,3 @@
-`include "a1_Content_Addressable_Memory.v"
 `timescale 1ns/1ps
 
 module Content_Addressable_Memory_t();
@@ -72,10 +71,5 @@ module Content_Addressable_Memory_t();
         #10 din = 8'd33;
         #10 din = 8'd2;
         #10 din = 8'd1;
-    end
-
-    initial begin
-        $dumpfile("a1.vcd");
-        $dumpvars(0, Content_Addressable_Memory_t);
     end
 endmodule
