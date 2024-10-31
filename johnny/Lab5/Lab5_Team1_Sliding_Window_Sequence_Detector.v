@@ -59,10 +59,10 @@ module Sliding_Window_Sequence_Detector (clk, rst_n, in, dec);
     always @(*) begin
         case(state)
             S8: 
-                if(in) out <= 1;
-                else out <= 0;
+                if(in) dec <= 1;
+                else dec <= 0;
             default: 
-                out <= 0;
+                dec <= 0;
         endcase
     end
 endmodule 
