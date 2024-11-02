@@ -86,7 +86,7 @@ module Greatest_Common_Divisor (clk, rst_n, start, a, b, done, gcd);
             FINISH: begin
                 done = 1;
                 if(next_state == WAIT) gcd = gcd;
-                else gcd = left == 0 ? right : left;;
+                else gcd = left == 0 ? right : left;
             end
             default: begin
                 done = done;
