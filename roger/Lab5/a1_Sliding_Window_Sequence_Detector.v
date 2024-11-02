@@ -3,7 +3,7 @@
 module Sliding_Window_Sequence_Detector (clk, rst_n, in, dec);
     input clk, rst_n;
     input in;
-    output reg dec;
+    output dec;
 
     parameter S0 = 4'd0;
     parameter S1 = 4'd1;
@@ -16,27 +16,26 @@ module Sliding_Window_Sequence_Detector (clk, rst_n, in, dec);
     parameter S8 = 4'd8;
 
     reg [4-1:0] state;
+    reg [4-1:0] next_state;
+
+    assign dec = (state==S8 & in==1'b1) ? 1'b1 : 1'b0;
 
     always @(*) begin
-        dec = (state==S8&&in==1'b1) ? 1'b1 : 1'b0;
+        case (state)
+            S0: next_state = (in ? S1 : S0);
+            S1: next_state = (in ? S2 : S0);
+            S2: next_state = (in ? S3 : S0);
+            S3: next_state = (in ? S3 : S4);
+            S4: next_state = (in ? S1 : S5);
+            S5: next_state = (in ? S6 : S0);
+            S6: next_state = (in ? S8 : S7);
+            S7: next_state = (in ? S6 : S0);
+            S8: next_state = (in ? S3 : S0);
+        endcase
     end
 
     always @(posedge clk) begin
-        if (!rst_n) begin
-            state <= S0;
-            dec <= 1'b0;
-        end else begin
-            case (state)
-                S0: begin state <= (in ? S1 : S0); end
-                S1: begin state <= (in ? S2 : S0); end
-                S2: begin state <= (in ? S3 : S0); end
-                S3: begin state <= (in ? S3 : S4); end
-                S4: begin state <= (in ? S1 : S5); end
-                S5: begin state <= (in ? S6 : S0); end
-                S6: begin state <= (in ? S8 : S7); end
-                S7: begin state <= (in ? S6 : S0); end
-                S8: begin state <= (in ? S3 : S0); end
-            endcase
-        end
+        if (!rst_n) state <= S0;
+        else        state <= next_state;
     end
 endmodule 
