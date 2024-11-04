@@ -78,14 +78,20 @@ module booth_MUL(clk, rst_n, a, b, p);
         end else begin
             case ({P[1], P[0]})
                 2'b01: begin
+                    A <= A;
+                    S <= S;
                     P <= {ADD[9], ADD[9:1]};
                     cnt <= cnt - 1;
                 end
                 2'b10: begin
+                    A <= A;
+                    S <= S;
                     P <= {SUB[9], SUB[9:1]};
                     cnt <= cnt - 1;
                 end
                 default: begin
+                    A <= A;
+                    S <= S;
                     P <= {P[9], P[9:1]};
                     cnt <= cnt - 1;
                 end
