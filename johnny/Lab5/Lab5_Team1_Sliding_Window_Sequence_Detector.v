@@ -6,18 +6,17 @@ module Sliding_Window_Sequence_Detector (clk, rst_n, in, dec);
     output dec;
     reg dec;
 
-    parameter S0 = 8'b00000000;
-    parameter S1 = 8'b00000001;
-    parameter S2 = 8'b00000011;
-    parameter S3 = 8'b00000111;
-    parameter S4 = 8'b00001110;
-    parameter S5 = 8'b00011100;
-    parameter S6 = 8'b00111001;
+    parameter S0 = 4'b0000;//8'b00000000
+    parameter S1 = 4'b0001;//8'b00000001
+    parameter S2 = 4'b0010;//8'b00000011
+    parameter S3 = 4'b0011;//8'b00000111
+    parameter S4 = 4'b0100;//8'b00001110
+    parameter S5 = 4'b0101;//8'b00011100
+    parameter S6 = 4'b0110;//8'b00111001
+    parameter S7 = 4'b0111;//8'b01110010
+    parameter S8 = 4'b1000;//8'b01110011
 
-    parameter S7 = 8'b01110010;
-    parameter S8 = 8'b01110011;
-
-    reg [7:0] state, next_state = S0;
+    reg [3:0] state, next_state = S0;
 
     always @(posedge clk) begin
         if (!rst_n) state <= S0;
@@ -59,10 +58,10 @@ module Sliding_Window_Sequence_Detector (clk, rst_n, in, dec);
     always @(*) begin
         case(state)
             S8: 
-                if(in) dec <= 1;
-                else dec <= 0;
+                if(in) dec = 1;
+                else dec = 0;
             default: 
-                dec <= 0;
+                dec = 0;
         endcase
     end
 endmodule 

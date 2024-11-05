@@ -9,8 +9,7 @@ module TOP (
     inout wire PS2_CLK,
 	output pmod_1,
 	output pmod_2,
-	output pmod_4,
-	output jiji
+	output pmod_4
 );
 
 parameter DUTY_BEST = 10'd512;	//duty cycle=50%
@@ -34,7 +33,6 @@ reg sel;
 
 assign pmod_2 = 1'd1;	//no gain(6dB)
 assign pmod_4 = 1'd1;	//turn-on
-assign jiji = tag;
 
 //Change beat frequency based on tag
 assign BEAT_FREQ = !tag ? 32'd1 : 32'd2 ;
@@ -52,15 +50,15 @@ PlayerCtrl playerCtrl_00 ( .clk(beatFreq),
 						   .reset(been_ready && key_down[KEY_CODES_ENTER] == 1'b1),
 						   .sel(sel),
 						   .ibeat(ibeatNum)
-);	
-	
+);
+
 //Generate variant freq. of tones
 Music music00 ( .ibeatNum(ibeatNum),
 				.tone(freq)
 );
 
 // Generate particular freq. signal
-PWM_gen toneGen ( .clk(clk), 
+PWM_gen toneGen ( .clk(clk),
 				  .reset(been_ready && key_down[KEY_CODES_ENTER] == 1'b1), 
 				  .freq(freq),
 				  .duty(DUTY_BEST), 
@@ -74,7 +72,7 @@ KeyboardDecoder key_de (
         .key_valid(been_ready),
         .PS2_DATA(PS2_DATA),
         .PS2_CLK(PS2_CLK),
-        .rst(been_ready && key_down[KEY_CODES_ENTER] == 1'b1),
+        .rst(1'b0),
         .clk(clk)
 );
 
