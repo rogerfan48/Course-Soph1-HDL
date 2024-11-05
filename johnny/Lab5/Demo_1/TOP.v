@@ -21,7 +21,6 @@ parameter [8:0] KEY_CODES_ENTER = 9'b0_0101_1010;
 wire [7:0] ibeatNum;
 wire [31:0] BEAT_FREQ;
 wire [31:0] freq;
-wire [31:0] freq1, freq2;
 wire beatFreq;
 
 wire [511:0] key_down;
