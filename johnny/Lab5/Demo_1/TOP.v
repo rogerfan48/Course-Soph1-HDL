@@ -75,27 +75,27 @@ KeyboardDecoder key_de (
         .clk(clk)
 );
 
-always @(*) begin
+always @(posedge clk) begin
 	if(been_ready) begin
 		if(key_down[KEY_CODES_W] == 1'b1) begin
-			tag = tag;
-			sel = 0;
+			tag <= tag;
+			sel <= 0;
 		end else if(key_down[KEY_CODES_S] == 1'b1) begin
-			tag = tag;
-			sel = 1;
+			tag <= tag;
+			sel <= 1;
 		end else if(key_down[KEY_CODES_R] == 1'b1) begin
-			sel = sel;
-			tag = ~tag;
+			sel <= sel;
+			tag <= ~tag;
 		end else if(key_down[KEY_CODES_ENTER] == 1'b1) begin
-			sel = 0;
-			tag = 0;
+			sel <= 0;
+			tag <= 0;
 		end else begin
-			sel = sel;
-			tag = tag;
+			sel <= sel;
+			tag <= tag;
 		end
 	end else begin
-		sel = sel;
-		tag = tag;
+		sel <= sel;
+		tag <= tag;
 	end
 end
 endmodule

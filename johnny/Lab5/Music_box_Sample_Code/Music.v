@@ -3,13 +3,13 @@
 //
 //
 
-`define NM1 32'd466 //bB_freq
-`define NM2 32'd523 //C_freq
-`define NM3 32'd587 //D_freq
-`define NM4 32'd622 //bE_freq
-`define NM5 32'd698 //F_freq
-`define NM6 32'd784 //G_freq
-`define NM7 32'd880 //A_freq
+`define NM1 32'd262 //bB_freq
+`define NM2 32'd294 //C_freq
+`define NM3 32'd330 //D_freq
+`define NM4 32'd349 //bE_freq
+`define NM5 32'd392 //F_freq
+`define NM6 32'd440 //G_freq
+`define NM7 32'd494 //A_freq
 `define NM0 32'd20000 //slience (over freq.)
 
 module Music (
