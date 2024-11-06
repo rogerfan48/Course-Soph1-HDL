@@ -10,11 +10,8 @@ module SevenSegment(
     reg [3:0] display_num;
     
     always @ (posedge clk, posedge rst) begin
-        if (rst) begin
-            clk_divider <= 16'b0;
-        end else begin
-            clk_divider <= clk_divider + 16'b1;
-        end
+        if (rst)    clk_divider <= 16'b0;
+        else        clk_divider <= clk_divider + 16'b1;
     end
     
     always @ (posedge clk, posedge rst) begin
@@ -65,5 +62,4 @@ module SevenSegment(
             default : display = 7'b1111111;
         endcase
     end
-    
 endmodule

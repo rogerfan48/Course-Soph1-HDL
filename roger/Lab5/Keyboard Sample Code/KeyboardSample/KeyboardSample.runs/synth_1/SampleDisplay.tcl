@@ -70,9 +70,12 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param tcl.statsThreshold 360
+set_param checkpoint.writeSynthRtdsInDcp 1
 set_param chipscope.maxJobs 5
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -96,7 +99,7 @@ read_verilog -library xil_defaultlib {
   {C:/Users/sweri/Desktop/HD/roger/Lab5/Keyboard Sample Code/SevenSegment.v}
   {C:/Users/sweri/Desktop/HD/roger/Lab5/Keyboard Sample Code/SampleDisplay.v}
 }
-read_ip -quiet {{c:/Users/sweri/Desktop/HD/roger/Lab5/Keyboard Sample Code/KeyboardSample/KeyboardSample.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci}}
+read_ip -quiet {{C:/Users/sweri/Desktop/HD/roger/Lab5/Keyboard Sample Code/KeyboardSample/KeyboardSample.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci}}
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -111,6 +114,8 @@ read_xdc {{C:/Users/sweri/Desktop/HD/roger/Lab5/Keyboard Sample Code/KeyboardCon
 set_property used_in_implementation false [get_files {{C:/Users/sweri/Desktop/HD/roger/Lab5/Keyboard Sample Code/KeyboardConstraints.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental {C:/Users/sweri/Desktop/HD/roger/Lab5/Keyboard Sample Code/KeyboardSample/KeyboardSample.srcs/utils_1/imports/synth_1/SampleDisplay.dcp}
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

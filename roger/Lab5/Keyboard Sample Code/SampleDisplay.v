@@ -61,21 +61,15 @@ module SampleDisplay(
     );
 
     always @ (posedge clk, posedge rst) begin
-        if (rst) begin
-            nums <= 16'b0;
-        end else begin
-            nums <= next_nums;
-        end
+        if (rst)    nums <= 16'b0;
+        else        nums <= next_nums;
     end
     always @ (*) begin
         next_nums = nums;
         if (been_ready && key_down[last_change] == 1'b1) begin
             if (key_num != 4'b1111) begin
-                if (shift_down == 1'b1) begin
-                    next_nums = {key_num, nums[15:4]};
-                end else begin
-                    next_nums = {nums[11:0], key_num};
-                end
+                if (shift_down == 1'b1) next_nums = {key_num, nums[15:4]};
+                else                    next_nums = {nums[11:0], key_num};
             end else next_nums = next_nums;
         end else next_nums = next_nums;
     end

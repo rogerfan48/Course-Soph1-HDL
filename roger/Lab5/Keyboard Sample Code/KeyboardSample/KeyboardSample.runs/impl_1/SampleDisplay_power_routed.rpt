@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date             : Wed Oct 30 21:57:19 2024
+| Date             : Tue Nov  5 11:56:20 2024
 | Host             : RGWIN running 64-bit major release  (build 9200)
 | Command          : report_power -file SampleDisplay_power_routed.rpt -pb SampleDisplay_power_summary_routed.pb -rpx SampleDisplay_power_routed.rpx
 | Design           : SampleDisplay
@@ -53,13 +53,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1684 |       --- |             --- |
+| Slice Logic    |    <0.001 |     1688 |       --- |             --- |
 |   LUT as Logic |    <0.001 |      818 |     20800 |            3.93 |
-|   Register     |    <0.001 |      666 |     41600 |            1.60 |
+|   Register     |    <0.001 |      667 |     41600 |            1.60 |
 |   CARRY4       |    <0.001 |        8 |      8150 |            0.10 |
 |   F7/F8 Muxes  |    <0.001 |      108 |     32600 |            0.33 |
-|   Others       |     0.000 |        8 |       --- |             --- |
-| Signals        |    <0.001 |      863 |       --- |             --- |
+|   Others       |     0.000 |       10 |       --- |             --- |
+| Signals        |    <0.001 |      868 |       --- |             --- |
 | I/O            |    <0.001 |       15 |       106 |           14.15 |
 | Static Power   |     0.072 |          |           |                 |
 | Total          |     0.074 |          |           |                 |
