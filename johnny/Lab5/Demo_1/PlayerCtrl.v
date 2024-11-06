@@ -16,7 +16,7 @@ always @(posedge clk, posedge reset) begin
 		ibeat <= 0;
 	end else begin
 		if(!sel) begin
-			if(ibeat < BEATLEAGTH || ibeat == 0) ibeat <= ibeat + 1;
+			if(ibeat < BEATLEAGTH) ibeat <= ibeat + 1;
 			else ibeat <= 28;
 		end else begin
 			if((ibeat <= BEATLEAGTH && ibeat > 0) || ibeat == 28) ibeat <= ibeat - 1;
