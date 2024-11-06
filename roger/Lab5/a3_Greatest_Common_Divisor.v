@@ -47,10 +47,18 @@ module Greatest_Common_Divisor (clk, rst_n, start, a, b, done, gcd);
         endcase
     end
 
+    always @(posedge clk) beg
+        case (state)
+            WAIT:   delay <= 1'b0;
+            CAL:    delay <= 1'b0;
+            FINISH: delay <= 1'b1;
+            default:delay <= 1'b0;
+        endcase
+    end
+
     always @(posedge clk) begin
         case (state)
             WAIT: begin
-                delay <= 1'b0;
                 if (next_state == CAL) begin
                     c <= a;
                     d <= b;
@@ -60,7 +68,6 @@ module Greatest_Common_Divisor (clk, rst_n, start, a, b, done, gcd);
                 end
             end
             CAL: begin
-                delay <= 1'b0;
                 if (!(c==16'd0 || d==16'd0)) begin
                     if (c > d) begin
                         c <= c - d;
@@ -73,9 +80,6 @@ module Greatest_Common_Divisor (clk, rst_n, start, a, b, done, gcd);
                     c <= c;
                     d <= d;
                 end
-            end
-            FINISH: begin
-                delay <= 1'b1;
             end
             default: begin      // just in case
                 c <= c;
