@@ -143,7 +143,7 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet C:/Users/sweri/Desktop/HD/roger/Lab5/a6_FPGA/a6_FPGA.runs/synth_1/Vender_Machine.dcp
-  read_ip -quiet c:/Users/sweri/Desktop/HD/roger/Lab5/a6_FPGA/a6_FPGA.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
+  read_ip -quiet C:/Users/sweri/Desktop/HD/roger/Lab5/a6_FPGA/a6_FPGA.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/Users/sweri/Desktop/HD/roger/Lab5/Keyboard/KeyboardConstraints.xdc
   read_xdc C:/Users/sweri/Desktop/HD/roger/Lab5/a6_FPGA/a6_FPGA.srcs/constrs_1/new/cons.xdc

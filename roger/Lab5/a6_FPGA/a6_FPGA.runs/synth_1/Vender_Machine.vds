@@ -2,8 +2,8 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Tue Nov  5 16:04:01 2024
-# Process ID: 6372
+# Start of session at: Thu Nov  7 16:02:48 2024
+# Process ID: 21068
 # Current directory: C:/Users/sweri/Desktop/HD/roger/Lab5/a6_FPGA/a6_FPGA.runs/synth_1
 # Command line: vivado.exe -log Vender_Machine.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Vender_Machine.tcl
 # Log file: C:/Users/sweri/Desktop/HD/roger/Lab5/a6_FPGA/a6_FPGA.runs/synth_1/Vender_Machine.vds
@@ -11,7 +11,7 @@
 # Running On: RGWIN, OS: Windows, CPU Frequency: 2189 MHz, CPU Physical cores: 14, Host memory: 16849 MB
 #-----------------------------------------------------------
 source Vender_Machine.tcl -notrace
-create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 394.672 ; gain = 45.738
+create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 395.066 ; gain = 44.977
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/sweri/Desktop/HD/roger/Lab5/Keyboard/ip'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'.
@@ -27,11 +27,11 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 19452
+INFO: [Synth 8-7075] Helper process launched with PID 16692
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 INFO: [Synth 8-11241] undeclared symbol 'pulse_been_ready', assumed default net type 'wire' [C:/Users/sweri/Desktop/HD/roger/Lab5/Keyboard/KeyboardDecoder.v:47]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1212.945 ; gain = 408.918
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1213.363 ; gain = 409.531
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Vender_Machine' [C:/Users/sweri/Desktop/HD/roger/Lab5/a6_fpga.v:1]
 INFO: [Synth 8-6157] synthesizing module 'One_Second_Clk_Gen' [C:/Users/sweri/Desktop/HD/roger/Lab5/a6_fpga.v:228]
@@ -45,8 +45,8 @@ INFO: [Synth 8-6157] synthesizing module 'Display_Clk_Gen' [C:/Users/sweri/Deskt
 INFO: [Synth 8-6155] done synthesizing module 'Display_Clk_Gen' (0#1) [C:/Users/sweri/Desktop/HD/roger/Lab5/a6_fpga.v:219]
 INFO: [Synth 8-6155] done synthesizing module 'Seven_Segment' (0#1) [C:/Users/sweri/Desktop/HD/roger/Lab5/a6_fpga.v:131]
 INFO: [Synth 8-6157] synthesizing module 'KeyboardDecoder' [C:/Users/sweri/Desktop/HD/roger/Lab5/Keyboard/KeyboardDecoder.v:1]
-INFO: [Synth 8-6157] synthesizing module 'KeyboardCtrl_0' [C:/Users/sweri/Desktop/HD/roger/Lab5/a6_FPGA/a6_FPGA.runs/synth_1/.Xil/Vivado-6372-RGWIN/realtime/KeyboardCtrl_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'KeyboardCtrl_0' (0#1) [C:/Users/sweri/Desktop/HD/roger/Lab5/a6_FPGA/a6_FPGA.runs/synth_1/.Xil/Vivado-6372-RGWIN/realtime/KeyboardCtrl_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'KeyboardCtrl_0' [C:/Users/sweri/Desktop/HD/roger/Lab5/a6_FPGA/a6_FPGA.runs/synth_1/.Xil/Vivado-21068-RGWIN/realtime/KeyboardCtrl_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'KeyboardCtrl_0' (0#1) [C:/Users/sweri/Desktop/HD/roger/Lab5/a6_FPGA/a6_FPGA.runs/synth_1/.Xil/Vivado-21068-RGWIN/realtime/KeyboardCtrl_0_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'OnePulse' [C:/Users/sweri/Desktop/HD/roger/Lab5/Keyboard/OnePulse.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'OnePulse' (0#1) [C:/Users/sweri/Desktop/HD/roger/Lab5/Keyboard/OnePulse.v:1]
 INFO: [Synth 8-226] default block is never used [C:/Users/sweri/Desktop/HD/roger/Lab5/Keyboard/KeyboardDecoder.v:69]
@@ -57,18 +57,18 @@ INFO: [Synth 8-226] default block is never used [C:/Users/sweri/Desktop/HD/roger
 INFO: [Synth 8-6155] done synthesizing module 'KeyboardDecoder' (0#1) [C:/Users/sweri/Desktop/HD/roger/Lab5/Keyboard/KeyboardDecoder.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'Vender_Machine' (0#1) [C:/Users/sweri/Desktop/HD/roger/Lab5/a6_fpga.v:1]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1307.055 ; gain = 503.027
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1306.797 ; gain = 502.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1307.055 ; gain = 503.027
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1306.797 ; gain = 502.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1307.055 ; gain = 503.027
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1306.797 ; gain = 502.965
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1307.055 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1306.797 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -85,23 +85,23 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/Vender_Machine_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1389.336 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1398.504 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1389.336 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1398.504 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:13 . Memory (MB): peak = 1389.336 ; gain = 585.309
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1398.504 ; gain = 594.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:13 . Memory (MB): peak = 1389.336 ; gain = 585.309
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1398.504 ; gain = 594.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -112,7 +112,7 @@ Applied set_property IO_BUFFER_TYPE = NONE for PS2_DATA. (constraint file  c:/Us
 Applied set_property CLOCK_BUFFER_TYPE = NONE for PS2_DATA. (constraint file  c:/Users/sweri/Desktop/HD/roger/Lab5/a6_FPGA/a6_FPGA.gen/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0/KeyboardCtrl_0_in_context.xdc, line 4).
 Applied set_property KEEP_HIERARCHY = SOFT for KD/inst. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:13 . Memory (MB): peak = 1389.336 ; gain = 585.309
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1398.504 ; gain = 594.672
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'KeyboardDecoder'
 ---------------------------------------------------------------------------------------------------
@@ -125,7 +125,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Keybo
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'KeyboardDecoder'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:13 . Memory (MB): peak = 1389.336 ; gain = 585.309
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1398.504 ; gain = 594.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -147,11 +147,12 @@ Detailed RTL Component Info :
 	   4 Input   10 Bit        Muxes := 1     
 	   2 Input    8 Bit        Muxes := 6     
 	   3 Input    6 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
 	  14 Input    4 Bit        Muxes := 1     
 	   4 Input    4 Bit        Muxes := 1     
 	   4 Input    2 Bit        Muxes := 1     
 	   2 Input    2 Bit        Muxes := 3     
-	   2 Input    1 Bit        Muxes := 16    
+	   2 Input    1 Bit        Muxes := 15    
 	   4 Input    1 Bit        Muxes := 7     
 	   7 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
@@ -171,25 +172,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:22 . Memory (MB): peak = 1389.336 ; gain = 585.309
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 1398.504 ; gain = 594.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:27 . Memory (MB): peak = 1389.336 ; gain = 585.309
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1398.504 ; gain = 594.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:33 . Memory (MB): peak = 1457.645 ; gain = 653.617
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:30 . Memory (MB): peak = 1446.141 ; gain = 642.309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:34 . Memory (MB): peak = 1466.734 ; gain = 662.707
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:31 . Memory (MB): peak = 1455.211 ; gain = 651.379
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -207,37 +208,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:38 . Memory (MB): peak = 1466.734 ; gain = 662.707
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1455.211 ; gain = 651.379
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:38 . Memory (MB): peak = 1466.734 ; gain = 662.707
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1455.211 ; gain = 651.379
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:38 . Memory (MB): peak = 1466.734 ; gain = 662.707
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1455.211 ; gain = 651.379
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:38 . Memory (MB): peak = 1466.734 ; gain = 662.707
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1455.211 ; gain = 651.379
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:38 . Memory (MB): peak = 1466.734 ; gain = 662.707
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1455.211 ; gain = 651.379
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:38 . Memory (MB): peak = 1466.734 ; gain = 662.707
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1455.211 ; gain = 651.379
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -259,10 +260,10 @@ Report Cell Usage:
 |3     |CARRY4       |    14|
 |4     |LUT1         |    20|
 |5     |LUT2         |    33|
-|6     |LUT3         |    11|
-|7     |LUT4         |   560|
-|8     |LUT5         |    68|
-|9     |LUT6         |   221|
+|6     |LUT3         |    10|
+|7     |LUT4         |   559|
+|8     |LUT5         |    73|
+|9     |LUT6         |   224|
 |10    |MUXF7        |    76|
 |11    |MUXF8        |    35|
 |12    |FDCE         |   539|
@@ -272,27 +273,27 @@ Report Cell Usage:
 |16    |OBUF         |    15|
 +------+-------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:38 . Memory (MB): peak = 1466.734 ; gain = 662.707
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1455.211 ; gain = 651.379
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:36 . Memory (MB): peak = 1466.734 ; gain = 580.426
-Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:38 . Memory (MB): peak = 1466.734 ; gain = 662.707
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:33 . Memory (MB): peak = 1455.211 ; gain = 559.672
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1455.211 ; gain = 651.379
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1478.625 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1467.094 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 125 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'Vender_Machine' is not ideal for floorplanning, since the cellview 'KeyboardDecoder' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1482.273 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1470.781 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: b8739a0e
+Synth Design complete, checksum: ad86f4e4
 INFO: [Common 17-83] Releasing license: Synthesis
 53 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:43 . Memory (MB): peak = 1482.273 ; gain = 1053.922
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:39 . Memory (MB): peak = 1470.781 ; gain = 1042.656
 INFO: [Common 17-1381] The checkpoint 'C:/Users/sweri/Desktop/HD/roger/Lab5/a6_FPGA/a6_FPGA.runs/synth_1/Vender_Machine.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Vender_Machine_utilization_synth.rpt -pb Vender_Machine_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Nov  5 16:04:52 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  7 16:03:35 2024...

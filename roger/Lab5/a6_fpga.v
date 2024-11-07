@@ -158,7 +158,7 @@ module Seven_Segment(        // num limited in 0~100
         else if (nums < 8'd100) ones = nums - 8'd90;
         else ones = 4'd0;
         
-        if      (nums < 8'd10)  tens = 4'd0;
+        if      (nums < 8'd10)  tens = 4'd10;   // don't show
         else if (nums < 8'd20)  tens = 4'd1;
         else if (nums < 8'd30)  tens = 4'd2;
         else if (nums < 8'd40)  tens = 4'd3;
@@ -170,7 +170,7 @@ module Seven_Segment(        // num limited in 0~100
         else if (nums < 8'd100) tens = 4'd9;
         else tens = 4'd0;
         
-        hundreds = (nums == 8'd100) ? 4'd1 : 4'd0;
+        hundreds = (nums == 8'd100) ? 4'd1 : 4'd10;  // don't show
     end
     
     always @ (posedge clk, posedge rst) begin
@@ -192,7 +192,7 @@ module Seven_Segment(        // num limited in 0~100
                     digit <= 4'b1011;
                 end
                 default: begin  // 2'd3
-                    display_num <= 4'd0;
+                    display_num <= 4'd10;
                     digit <= 4'b0111;
                 end	
             endcase

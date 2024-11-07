@@ -2,8 +2,8 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Tue Nov  5 16:04:01 2024
-# Process ID: 6372
+# Start of session at: Thu Nov  7 16:02:48 2024
+# Process ID: 21068
 # Current directory: C:/Users/sweri/Desktop/HD/roger/Lab5/a6_FPGA/a6_FPGA.runs/synth_1
 # Command line: vivado.exe -log Vender_Machine.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Vender_Machine.tcl
 # Log file: C:/Users/sweri/Desktop/HD/roger/Lab5/a6_FPGA/a6_FPGA.runs/synth_1/Vender_Machine.vds

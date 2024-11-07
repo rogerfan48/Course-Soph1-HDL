@@ -31,7 +31,15 @@ module Greatest_Common_Divisor_t ();
         b = 16'd180;
         #60 start = 1'b1;
         #30 start = 1'b0;
-        #100
+        #100 start = 1'b1;
+        a = 16'd14;
+        b = 16'd1;
+        #60 start = 1'b0;
+        #140
+        a = 16'd28;
+        b = 16'd28;
+        #10 start = 1'b1;
+        #60
         $finish;
     end
 

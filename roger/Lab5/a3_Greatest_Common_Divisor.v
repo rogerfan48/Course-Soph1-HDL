@@ -47,7 +47,7 @@ module Greatest_Common_Divisor (clk, rst_n, start, a, b, done, gcd);
         endcase
     end
 
-    always @(posedge clk) beg
+    always @(posedge clk) begin
         case (state)
             WAIT:   delay <= 1'b0;
             CAL:    delay <= 1'b0;

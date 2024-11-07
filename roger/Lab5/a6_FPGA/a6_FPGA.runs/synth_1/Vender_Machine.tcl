@@ -98,7 +98,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/sweri/Desktop/HD/roger/Lab5/Keyboard/OnePulse.v
   C:/Users/sweri/Desktop/HD/roger/Lab5/a6_fpga.v
 }
-read_ip -quiet c:/Users/sweri/Desktop/HD/roger/Lab5/a6_FPGA/a6_FPGA.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
+read_ip -quiet C:/Users/sweri/Desktop/HD/roger/Lab5/a6_FPGA/a6_FPGA.srcs/sources_1/ip/KeyboardCtrl_0/KeyboardCtrl_0.xci
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

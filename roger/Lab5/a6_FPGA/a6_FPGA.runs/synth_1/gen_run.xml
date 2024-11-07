@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1730793839" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Vender_Machine.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1730966563" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Vender_Machine.dcp">
   <File Type="PA-TCL" Name="Vender_Machine.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="Vender_Machine_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Vender_Machine_reports.tcl"/>
@@ -88,9 +88,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="KeyboardCtrl_0"/>
