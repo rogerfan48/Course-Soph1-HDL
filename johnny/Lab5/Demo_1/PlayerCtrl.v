@@ -13,10 +13,10 @@ parameter BEATLEAGTH = 28;
 
 always @(posedge clk, posedge reset) begin
 	if (reset) begin
-		ibeat <= 0;
+		ibeat <= 8'b11111111;
 	end else begin
 		if(!sel) begin
-			if(ibeat < BEATLEAGTH) ibeat <= ibeat + 1;
+			if(ibeat < BEATLEAGTH || ibeat == 8'b11111111) ibeat <= ibeat + 1;
 			else ibeat <= 28;
 		end else begin
 			if((ibeat <= BEATLEAGTH && ibeat > 0) || ibeat == 28) ibeat <= ibeat - 1;
