@@ -12,7 +12,7 @@ module Greatest_Common_Divisor (clk, rst_n, start, a, b, done, gcd);
     parameter CAL = 2'b01;
     parameter FINISH = 2'b10;
     reg [2-1:0] state;
-    reg [2-1:0] next_state = WAIT;
+    reg [2-1:0] next_state;
     reg [16-1:0] c;
     reg [16-1:0] d;
     reg delay;
