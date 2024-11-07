@@ -15,7 +15,8 @@ module Traffic_Light_Controller_t ();
     initial begin
         #350 lr_has_car = 1;
         #3000 lr_has_car = 0;
-        #1500 $finish;
+        #1500 lr_has_car = 1;
+        #100 $finish;
     end
 
     initial begin

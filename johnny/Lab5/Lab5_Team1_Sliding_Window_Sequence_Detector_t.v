@@ -26,8 +26,8 @@ module Sliding_Window_Sequence_Detector_t ();
         #10 in = 1;
         #30 in = 0;
         #20 in = 1;
-        #10 in = 0;
-        #50 $finish;
+        #30 in = 0;
+        #30 $finish;
     end
 
     initial begin
