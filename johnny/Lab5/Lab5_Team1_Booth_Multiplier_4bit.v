@@ -73,7 +73,7 @@ module booth_MUL(clk, rst_n, a, b, p);
             A <= {a[3], a, 5'd0};
             if(a == 4'b1000) S <= {5'b01000, 5'd0};
             else if(a == 4'd0) S <= {10'd0};
-            else S <= {/*n_A*/~a[3], -a, 5'd0};
+            else S <= {~a[3], -a, 5'd0};
             P <= {5'd0, b, 1'b0};
             cnt <= 3'd4;
         end else begin

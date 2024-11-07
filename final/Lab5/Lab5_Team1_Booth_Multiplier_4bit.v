@@ -6,16 +6,14 @@ module Booth_Multiplier_4bit(clk, rst_n, start, a, b, p);
     input start;
     input signed [3:0] a, b;
     output reg signed [7:0] p;
-
+    wire signed [7:0] out;
+    
     parameter WAIT = 3'b001;
     parameter CAL = 3'b010;
     parameter FINISH = 3'b100;
-
     reg [2:0] cnt_CAL;
     reg [2:0] cnt_FIN;
     reg [2:0] state, next_state = WAIT;
-    wire signed [7:0] out;
-
 
     booth_MUL BM(clk, state == CAL, a, b, out);
 
@@ -60,11 +58,11 @@ endmodule
 
 module booth_MUL(clk, rst_n, a, b, p);
     input clk, rst_n;
-    input [3:0] a, b;
-    output [7:0] p;
+    input signed [3:0] a, b;
+    output signed [7:0] p;
     reg [2:0] cnt;
-    reg [9:0] P, A, S;
-    wire [9:0] ADD, SUB;
+    reg signed [9:0] P, A, S;
+    wire signed [9:0] ADD, SUB;
 
     assign p = {P[8:1]};
     assign ADD = P + A;
@@ -74,7 +72,8 @@ module booth_MUL(clk, rst_n, a, b, p);
         if(!rst_n) begin
             A <= {a[3], a, 5'd0};
             if(a == 4'b1000) S <= {5'b01000, 5'd0};
-            else S <= {!a[3], -a, 5'd0};
+            else if(a == 4'd0) S <= {10'd0};
+            else S <= {~a[3], -a, 5'd0};
             P <= {5'd0, b, 1'b0};
             cnt <= 3'd4;
         end else begin
