@@ -101,12 +101,10 @@ end
 always @(*) begin
 	case(speed)
 		1'b0:
-			if(been_ready && key_down[KEY_CODES_ENTER]) next_speed = 1'b0;
-			else if(been_ready && key_down[KEY_CODES_R]) next_speed = 1'b1;
+			if(been_ready && key_down[KEY_CODES_R]) next_speed = 1'b1;
 			else next_speed = 1'b0;
 		default:
-			if(been_ready && key_down[KEY_CODES_ENTER]) next_speed = 1'b0;
-			else if(been_ready && key_down[KEY_CODES_R]) next_speed = 1'b0;
+			if(been_ready && (key_down[KEY_CODES_ENTER] || key_down[KEY_CODES_R])) next_speed = 1'b0;
 			else next_speed = 1'b1;
 	endcase
 end
@@ -114,19 +112,16 @@ end
 always @(*) begin
 	case(dir)
 		1'b0:
-			if(been_ready && key_down[KEY_CODES_ENTER]) next_dir = 1'b0;
-			else if(been_ready && key_down[KEY_CODES_W]) next_dir = 1'b0;
-			else if(been_ready && key_down[KEY_CODES_S]) next_dir = 1'b1;
+			if(been_ready && key_down[KEY_CODES_S]) next_dir = 1'b1;
 			else next_dir = 1'b0;
 		default:
-			if(been_ready && key_down[KEY_CODES_ENTER]) next_dir = 1'b0;
-			else if(been_ready && key_down[KEY_CODES_W]) next_dir = 1'b0;
-			else if(been_ready && key_down[KEY_CODES_S]) next_dir = 1'b1;
+			if(been_ready && (key_down[KEY_CODES_ENTER] || key_down[KEY_CODES_W])) next_dir = 1'b0;
 			else next_dir = 1'b1;
 	endcase
 end
 endmodule
 
+//other modules
 module ch_speed(in, out);
 	input in;
 	output [31:0] out;
