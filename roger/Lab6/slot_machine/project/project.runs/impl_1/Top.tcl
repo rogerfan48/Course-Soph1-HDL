@@ -138,7 +138,7 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet C:/Users/sweri/Desktop/HD/roger/Lab6/slot_machine/project/project.runs/synth_1/Top.dcp
-  read_ip -quiet c:/Users/sweri/Desktop/HD/roger/Lab6/slot_machine/project/project.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
+  read_ip -quiet C:/Users/sweri/Desktop/HD/roger/Lab6/slot_machine/project/project.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/Users/sweri/Desktop/HD/roger/Lab6/slot_machine/cons.xdc
 OPTRACE "read constraints: implementation" END { }

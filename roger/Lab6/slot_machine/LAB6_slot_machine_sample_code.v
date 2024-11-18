@@ -157,6 +157,9 @@ module state_control(clk, rst, down, up, A_v_count, B_v_count, C_v_count);
 		if (rst) begin
 			started <= 1'b0;
 			isDown <= 1'b0;
+		end else if (counter==10'd1000) begin
+			started <= 1'b0;
+			isDown <= 1'b0;
 		end else begin
 			if (started) begin
 				isDown <= isDown;
@@ -224,7 +227,7 @@ module state_control(clk, rst, down, up, A_v_count, B_v_count, C_v_count);
 		endcase
 	end
 	
-	assign next_counter = (((down==1'b0 && up==1'b0) && counter==10'd0) || (counter >= 10'd1000))? counter : counter+1'b1;
+	assign next_counter = (counter >= 10'd1000) ? 10'd0 : ((down==1'b0 && up==1'b0) && counter==10'd0) ? counter : counter+1'b1;
 	assign next_C_state = C_to;
 	assign next_B_state = B_to;
 	assign next_A_state = A_to;

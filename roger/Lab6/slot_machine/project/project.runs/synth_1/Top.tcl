@@ -88,9 +88,9 @@ set_property ip_output_repo c:/Users/sweri/Desktop/HD/roger/Lab6/slot_machine/pr
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files c:/Users/sweri/Desktop/HD/roger/Lab6/slot_machine/out.coe
+add_files C:/Users/sweri/Desktop/HD/roger/Lab6/slot_machine/out.coe
 read_verilog -library xil_defaultlib C:/Users/sweri/Desktop/HD/roger/Lab6/slot_machine/LAB6_slot_machine_sample_code.v
-read_ip -quiet c:/Users/sweri/Desktop/HD/roger/Lab6/slot_machine/project/project.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
+read_ip -quiet C:/Users/sweri/Desktop/HD/roger/Lab6/slot_machine/project/project.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
 set_property used_in_implementation false [get_files -all c:/Users/sweri/Desktop/HD/roger/Lab6/slot_machine/project/project.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
