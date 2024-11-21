@@ -25,12 +25,12 @@ module motor(
     // [TO-DO] take the right speed for different situation
     always @(*) begin
         case(mode)
-            3'b001: {next_left_motor, next_right_motor} = {10'd1000, 10'd700};
-            3'b011: {next_left_motor, next_right_motor} = {10'd1000, 10'd850};
-            3'b100: {next_left_motor, next_right_motor} = {10'd850, 10'd1000};
-            3'b110: {next_left_motor, next_right_motor} = {10'd700, 10'd1000};
+            3'b001: {next_left_motor, next_right_motor} = {10'd800, 10'd550};
+            3'b011: {next_left_motor, next_right_motor} = {10'd800, 10'd650};
+            3'b100: {next_left_motor, next_right_motor} = {10'd550, 10'd800};
+            3'b110: {next_left_motor, next_right_motor} = {10'd650, 10'd800};
             3'b000: {next_left_motor, next_right_motor} = {10'd600, 10'd600};
-            default: {next_left_motor, next_right_motor} = {10'd1000, 10'd1000};
+            default: {next_left_motor, next_right_motor} = {10'd800, 10'd800};
         endcase
     end
 

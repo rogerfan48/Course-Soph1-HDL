@@ -45,6 +45,10 @@ module Top(
         else begin
             case(state)
                 3'b000: {left, right} = {4'b0101};
+                3'b001, 3'b011: {left, right} = {4'b}
+                3'b011:
+                3'b100:
+                3'b110:
                 default: {left, right} = {4'b1010};
             endcase
         end
