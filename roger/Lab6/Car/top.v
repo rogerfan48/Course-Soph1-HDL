@@ -5,49 +5,59 @@ module Top(
     input left_signal,
     input right_signal,
     input mid_signal,
+    input stop_b,
     output trig,
     output left_motor,
     output reg [1:0]left,
     output right_motor,
-    output reg [1:0]right
+    output reg [1:0]right,
+    output LED_L,
+    output LED_M,
+    output LED_R
 );
 
-    wire Rst_n, rst_pb, stop;
+    assign LED_L = left_signal;
+    assign LED_M = mid_signal;
+    assign LED_R = right_signal;
+
+    wire rst_op, rst_pb, stop;
     debounce d0(rst_pb, rst, clk);
-    onepulse d1(rst_pb, clk, Rst_n);
-    wire [2:0] state;
+    onepulse d1(rst_pb, clk, rst_op);
+    wire [3:0] state;
+
+    // state:
+    // 4'b0000~4'b0111: default
+    parameter STAY_L = 4'b1000;
+    parameter STAY_R = 4'b1001;
 
     motor A(
         .clk(clk),
-        .rst(Rst_n),
+        .rst(rst_op),
         .mode(state),
         .pwm({left_motor, right_motor})
     );
-
     sonic_top B(
         .clk(clk), 
-        .rst(Rst_n), 
+        .rst(rst_op), 
         .Echo(echo), 
         .Trig(trig),
         .stop(stop)
     );
-    
     tracker_sensor C(
+        .clk(clk), 
+        .rst(rst_op), 
         .left_signal(left_signal), 
         .right_signal(right_signal),
         .mid_signal(mid_signal), 
         .state(state)
-       );
+    );
 
     always @(*) begin
         // [TO-DO] Use left and right to set your pwm
-        if(stop) {left, right} = {4'd0};
-        else begin
-            case(state)
-                3'b000: {left, right} = {4'b0101};
-                default: {left, right} = {4'b1010};
-            endcase
-        end
+        if (stop || stop_b) {left, right} = 4'd0;
+        // else if (state == STAY_L) {left, right} = 4'b0110;
+        // else if (state == STAY_R) {left, right} = 4'b1001;
+        else      {left, right} = 4'b1010;
     end
 
 endmodule
