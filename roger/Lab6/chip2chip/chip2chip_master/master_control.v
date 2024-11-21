@@ -83,7 +83,6 @@ module master_control(clk, rst_n, request, ack, data_in, notice, data, valid, re
                 next_start = 1'b0;
                 next_valid = 1'b0;
             end
-
             state_wait_ack: begin
                 next_state = (ack == 1'b1)? state_wait_to_send_data: state_wait_ack;
                 next_notice = 1'b0;
