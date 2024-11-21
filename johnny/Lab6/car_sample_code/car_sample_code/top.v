@@ -15,35 +15,39 @@ module Top(
     wire Rst_n, rst_pb, stop;
     debounce d0(rst_pb, rst, clk);
     onepulse d1(rst_pb, clk, Rst_n);
+    wire [2:0] state;
 
     motor A(
-        .clk(),
-        .rst(),
-        //.mode(),
-        .pwm()
+        .clk(clk),
+        .rst(Rst_n),
+        .mode(state),
+        .pwm({left_motor, right_motor})
     );
 
     sonic_top B(
-        .clk(), 
-        .rst(), 
-        .Echo(), 
-        .Trig(),
-        .stop()
+        .clk(clk), 
+        .rst(Rst_n), 
+        .Echo(echo), 
+        .Trig(trig),
+        .stop(stop)
     );
     
     tracker_sensor C(
-        .clk(), 
-        .reset(), 
-        .left_signal(), 
-        .right_signal(),
-        .mid_signal(), 
-        //.state()
+        .left_signal(left_signal), 
+        .right_signal(right_signal),
+        .mid_signal(mid_signal), 
+        .state(state)
        );
 
     always @(*) begin
         // [TO-DO] Use left and right to set your pwm
-        //if(stop) {left, right} = ???;
-        //else  {left, right} = ???;
+        if(stop) {left, right} = {4'd0};
+        else begin
+            case(state)
+                3'b000: {left, right} = {4'b0101};
+                default: {left, right} = {4'b1010};
+            endcase
+        end
     end
 
 endmodule
