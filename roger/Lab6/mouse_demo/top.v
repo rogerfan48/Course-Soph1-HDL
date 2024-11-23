@@ -1,22 +1,22 @@
 module top(
-   input clk,
-   input rst,
-   output [3:0] vgaRed,
-   output [3:0] vgaGreen,
-   output [3:0] vgaBlue,
-   output hsync,
-   output vsync,
-   output [3:0]AN,
-   output [6:0]SEG,
-   inout PS2_CLK,
-   inout PS2_DATA
+    input clk,
+    input rst,
+    output [3:0] vgaRed,
+    output [3:0] vgaGreen,
+    output [3:0] vgaBlue,
+    output hsync,
+    output vsync,
+    output [3:0]AN,
+    output [6:0]SEG,
+    inout PS2_CLK,
+    inout PS2_DATA
 );
 
     wire clk_25MHz;
     wire clk_segment;
     wire valid;
     reg isX, isX_next;
-    wire [9:0] h_cnt; //640
+    wire [9:0] h_cnt;  //640
     wire [9:0] v_cnt;  //480
     
     wire enable_mouse_display;
@@ -27,41 +27,41 @@ module top(
     wire [11:0] mouse_pixel = {mouse_cursor_red, mouse_cursor_green, mouse_cursor_blue};
 
     clock_divisor clk_wiz_0_inst(
-      .clk(clk),
-      .clk1(clk_25MHz),
-      .clk17(clk_segment)
+        .clk(clk),
+        .clk1(clk_25MHz),
+        .clk17(clk_segment)
     );
 
-   pixel_gen pixel_gen_inst(
-       .h_cnt(h_cnt),
-       .MOUSE_X_POS(MOUSE_X_POS),
-       .valid(valid),
-       .enable_mouse_display(enable_mouse_display),
-       .mouse_pixel(mouse_pixel),
-       .MOUSE_LEFT(MOUSE_LEFT),
-       .MOUSE_RIGHT(MOUSE_RIGHT),
-       .vgaRed(vgaRed),
-       .vgaGreen(vgaGreen),
-       .vgaBlue(vgaBlue)
+    pixel_gen pixel_gen_inst(
+        .h_cnt(h_cnt),
+        .MOUSE_X_POS(MOUSE_X_POS),
+        .valid(valid),
+        .enable_mouse_display(enable_mouse_display),
+        .mouse_pixel(mouse_pixel),
+        .MOUSE_LEFT(MOUSE_LEFT),
+        .MOUSE_RIGHT(MOUSE_RIGHT),
+        .vgaRed(vgaRed),
+        .vgaGreen(vgaGreen),
+        .vgaBlue(vgaBlue)
     );
     
     segment_display(
-      .clk(clk_segment),
-      .MOUSE_X_POS(MOUSE_X_POS),
-      .MOUSE_Y_POS(MOUSE_Y_POS),
-      .isX(isX),
-      .AN(AN),
-      .SEG(SEG)
+        .clk(clk_segment),
+        .MOUSE_X_POS(MOUSE_X_POS),
+        .MOUSE_Y_POS(MOUSE_Y_POS),
+        .isX(isX),
+        .AN(AN),
+        .SEG(SEG)
     );
 
     vga_controller vga_inst(
-      .pclk(clk_25MHz),
-      .reset(rst),
-      .hsync(hsync),
-      .vsync(vsync),
-      .valid(valid),
-      .h_cnt(h_cnt),
-      .v_cnt(v_cnt)
+        .pclk(clk_25MHz),
+        .reset(rst),
+        .hsync(hsync),
+        .vsync(vsync),
+        .valid(valid),
+        .h_cnt(h_cnt),
+        .v_cnt(v_cnt)
     );
     
     mouse mouse_ctrl_inst(
@@ -98,5 +98,4 @@ module top(
             isX_next = 1'b0;
         end
     end
-      
 endmodule

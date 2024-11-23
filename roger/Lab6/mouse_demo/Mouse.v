@@ -19,9 +19,9 @@ module mouse(
     wire [3:0] MOUSE_Z_POS;
     
     MouseCtl #(
-      .SYSCLK_FREQUENCY_HZ(108000000),
-      .CHECK_PERIOD_MS(500),
-      .TIMEOUT_PERIOD_MS(100)
+        .SYSCLK_FREQUENCY_HZ(108000000),
+        .CHECK_PERIOD_MS(500),
+        .TIMEOUT_PERIOD_MS(100)
     )MC1(
         .clk(clk),
         .rst(1'b0),
@@ -40,7 +40,6 @@ module mouse(
         .ps2_clk(PS2_CLK),
         .ps2_data(PS2_DATA)
     );
-    
     MouseDisplay MD1(
         .pixel_clk(clk),
         .xpos(MOUSE_X_POS),
@@ -52,5 +51,4 @@ module mouse(
         .green_out(mouse_cursor_green),
         .blue_out(mouse_cursor_blue)
     );
-
 endmodule
