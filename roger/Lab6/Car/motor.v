@@ -37,8 +37,10 @@ module motor(
             // 4'b0001: {next_left_motor, next_right_motor} = {10'd1023, 10'd750};
             // 4'b0110: {next_left_motor, next_right_motor} = {10'd750,  10'd1023};
             // 4'b0100: {next_left_motor, next_right_motor} = {10'd650,  10'd1023};
-            STAY_L: {next_left_motor, next_right_motor} = {10'd580, 10'd1023};
-            STAY_R: {next_left_motor, next_right_motor} = {10'd1023, 10'd580};
+            STAY_L: {next_left_motor, next_right_motor} = {10'd1023, 10'd1023};
+            STAY_R: {next_left_motor, next_right_motor} = {10'd1023, 10'd1023};
+            // STAY_L: {next_left_motor, next_right_motor} = {10'd580, 10'd1023};
+            // STAY_R: {next_left_motor, next_right_motor} = {10'd1023, 10'd580};
             default: {next_left_motor, next_right_motor} = {10'd1023,  10'd1023};
         endcase
     end
