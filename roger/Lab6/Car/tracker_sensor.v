@@ -4,7 +4,7 @@ module tracker_sensor(clk, rst, left_signal, right_signal, mid_signal, state, di
     input left_signal, right_signal, mid_signal;
     output reg [3:0] state;
     output reg dir;             // 1'b0: need left
-    reg [3:0] next_state = 3'b111;
+    reg [3:0] next_state = 4'b0111;
 
     parameter STAY_L = 4'b1000;
     parameter STAY_R = 4'b1001;

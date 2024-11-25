@@ -54,10 +54,10 @@ module Top(
 
     always @(*) begin
         // [TO-DO] Use left and right to set your pwm
-        if (stop || stop_b) {left, right} = 4'd0;
+        if (stop || stop_b)       {left, right} = 4'd0;
         else if (state == STAY_L) {left, right} = 4'b0110;
         else if (state == STAY_R) {left, right} = 4'b1001;
-        else      {left, right} = 4'b1010;
+        else                      {left, right} = 4'b1010;
     end
 
 endmodule

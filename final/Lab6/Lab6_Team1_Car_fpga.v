@@ -103,7 +103,6 @@ module motor(
     reg [9:0]next_left_motor, next_right_motor;
     reg [9:0]left_motor, right_motor;
     wire left_pwm, right_pwm;
-    wire clk_sl, clk_fa;
 
     motor_pwm m0(clk, rst, left_motor, left_pwm);
     motor_pwm m1(clk, rst, right_motor, right_pwm);
