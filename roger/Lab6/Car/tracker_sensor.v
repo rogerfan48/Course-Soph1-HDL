@@ -8,7 +8,6 @@ module tracker_sensor(clk, rst, left_signal, right_signal, mid_signal, state, di
 
     parameter STAY_L = 4'b1000;
     parameter STAY_R = 4'b1001;
-    reg [25:0] cnt;
 
     wire left_signal_d, right_signal_d, mid_signal_d;
     Debounce DB0(clk, left_signal, left_signal_d);
@@ -16,7 +15,6 @@ module tracker_sensor(clk, rst, left_signal, right_signal, mid_signal, state, di
     Debounce DB2(clk, mid_signal, mid_signal_d);
 
     // [TO-DO] Receive three signals and make your own policy.
-    // Hint: You can use output state to change your action.
     always @(posedge clk, posedge rst) begin
         if (rst) begin
             state <= 4'b0111;
@@ -28,26 +26,6 @@ module tracker_sensor(clk, rst, left_signal, right_signal, mid_signal, state, di
             else                                            dir <= dir;
         end
     end
-
-    // always @(posedge clk, negedge rst) begin
-    //     if (rst) begin
-    //         cnt <= 26'b0;
-    //     end else begin
-    //         case (state)
-    //             4'b0000: begin
-    //                 if (cnt == 26'd40000000) cnt <= 26'b0;
-    //                 else begin
-    //                     if (state != 4'b0000) begin
-    //                         cnt <= 26'b0;
-    //                     end else begin
-    //                         cnt <= cnt + 1'b1;
-    //                     end
-    //                 end
-    //             end
-    //             default: cnt <= cnt;
-    //         endcase
-    //     end
-    // end
 
     always @(*) begin
         case(state)
