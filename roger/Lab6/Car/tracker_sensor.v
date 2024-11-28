@@ -53,7 +53,7 @@ module tracker_sensor(clk, rst, left_signal, right_signal, mid_signal, state, di
         case(state)
             4'b0000: next_state = (dir ? STAY_R : STAY_L);
             STAY_L, STAY_R: begin
-                if ({left_signal_d, mid_signal_d, right_signal_d} == 3'b111) begin
+                if ({left_signal_d, mid_signal_d, right_signal_d} != 3'b000) begin
                     next_state = {1'b0, left_signal_d, mid_signal_d, right_signal_d};
                 end else begin
                     next_state = state;
@@ -70,8 +70,8 @@ endmodule
 module Debounce (clk, pb, pb_d);
     input clk, pb;
     output pb_d;
-    reg [19:0] DFF;
+    reg [99:0] DFF;
 
     assign pb_d = &DFF;
-    always @(posedge clk) DFF[19:0] <= {DFF[18:0], pb};
+    always @(posedge clk) DFF[99:0] <= {DFF[98:0], pb};
 endmodule
