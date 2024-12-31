@@ -1,4 +1,4 @@
-## Course - Sophomore 1 - Hardware Design Lab
+## Course - Sophomore Fall - Hardware Design Lab
 - This repository contains all my exercises, assignments, and laboratory work from the Hardware Design Lab course during my sophomore year's first semester. 
 - Three main folders: 
   - `roger`: my personal files
